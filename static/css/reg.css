@@ -1,0 +1,294 @@
+.g-top {
+    width: 100%;
+}
+.g-top a {
+    display: block;
+    height: 70px;
+}
+
+/* 注册 */
+.g-wrap {
+    width: 1098px;
+    margin: 0 auto;
+}
+.g-wrap .g-hd {
+    width: 1098px;
+    height: 130px;
+}
+
+/* g-lft */
+.g-hd .u-lft {
+    padding: 26px 0 0 24px;
+} 
+.g-hd .u-lft a {
+    display: inline-block;
+    height: 75px;
+}
+.g-hd .u-lft p {
+    display: inline-block;
+    font-size: 18px;
+    position: relative;
+    top: -30px;
+    color: #666666;
+}
+
+/* g-rgt */
+.g-hd .u-rgt {
+    float: right;
+    margin: 0 97px 24px 0;
+}
+.g-hd .u-rgt a {
+    color: #00549d;
+}
+
+/* g-ct */
+.g-ct {
+    width: 1000px;
+    height: 530px;
+    border: 1px solid #f3f3f3;
+    box-shadow: 4px 8px 2px #ddd, -3px -3px 3px #f3f3f3;
+}
+.g-ct h1 {
+    clear: both;
+    height: 42px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 22px;
+    color: #e52423;
+    border-bottom: 1px solid #e6e6e6;
+}
+.g-ct h1 span {
+    display: block;
+    width: 172px;
+    border-bottom: 2px solid #e52423;
+    margin: 0 auto;
+}
+
+/* 注册框 */
+.u-form {
+    position: relative;
+    width: 400px;
+    height: 466px;
+    text-align: center;
+    background: #f9f9f9;
+    margin: 10px auto;
+}
+.u-form input {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    border: 1px solid #e6e6e6;
+    margin: 14px 0;
+    font-size: 16px;
+    color: #777777;
+}
+.u-btn-user, .u-btn-pwd, .u-btn-frd {
+    width: 388px;
+} 
+.u-btn-code, .u-btn-msg, .u-btn-gain {
+    width: 138px;
+} 
+ .u-form .u-btn-code, .u-form .u-btn-msg {
+    margin-right: 20px;
+}
+.u-form .u-btn-user {
+    margin-top: 20px;
+}
+.u-form .u-btn-frd {
+    margin-bottom: 2px;
+}
+.u-form .u-btn-num {
+    width: 90px;
+    height: 26px;
+    line-height: 26px;
+    border: 0;
+    margin-top: 22px;
+    text-align: center;
+    margin-bottom: 26px;
+    background: #838780;
+    color: #ffb177;
+} 
+.u-form a.change {
+    position: relative;
+    top: 30px;
+    font-size: 16px;
+    color: #00549d;
+}
+.u-form .u-btn-gain {
+    background: #f4f4f4;
+}
+.u-form .u-btn-box {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #8e8f8f;
+    margin: 30px 0 10px 5px;
+}
+.u-form span, .u-form a.deal {
+    float: left;
+    position: relative;
+}
+.u-form span {
+    top: 28px;
+    left: 10px;
+    color: #666666;
+}
+.u-form a.deal {
+    top: 28px;
+    left: 14px;
+    color: #c53801;
+}
+.u-form .u-btn-reg {
+    width: 400px;
+    background: #e02323;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    border: 0;
+    cursor: pointer;
+} 
+
+/* 注册设置 */
+.u-form i {
+    position: absolute;
+    display: block;
+    width: 16px;
+    height: 16px;
+    /* background: #f90; */
+}
+.u-form em {
+    position: absolute;
+    display: block;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 8px;
+    background: #fff9c9;
+    font-weight: normal;
+    border: 1px solid #c7bf93;
+    border-radius: 3px;
+}
+#txt1, #txt2, #txt3, #txt4, #txt5 {
+    display: none;
+}
+#txt1 {
+    top: -10px;
+    left: 36%;
+}
+#txt2 {
+    top: 60px;
+    left: 18%;
+}
+#txt3 {
+    top: 130px;
+    left: 7%;
+}
+#txt4 {
+    top: 204px;
+    left: 2%;
+}
+#txt5 {
+    top: 274px;
+    left: 36%;
+}
+.u-form .txtno {
+    border: 1px solid #e12323;
+}
+.u-form .txtyes {
+    border: 1px solid greenyellow;
+}
+.user, .pwd {
+    left: 366px;
+}
+.user {
+    top: 33px;
+}
+.pwd {
+    top: 103px;
+}
+.code {
+    top: 173px;
+    left: 115px;
+}
+.msg {
+    top: 247px;
+    left: 115px;
+}
+.frd {
+	top: 318px;
+    left: 365px;
+}
+.no {
+    background: url(../reg-images/no.png) no-repeat;
+}
+.yes {
+    background: url(../reg-images/yes.png) no-repeat;
+}
+
+/* tips */
+.u-form div {
+    position: absolute;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 10px;
+    color: #ff3300;
+}
+.tips1 {
+    top: 62px;
+}
+.tips2 {
+    top: 132px;
+}
+.tips3 {
+    top: 204px;
+}
+.tips4 {
+    top: 276px;
+}
+.tips5 {
+    top: 346px;
+}
+
+
+
+
+
+/* footer */
+.g-ft {
+    text-align: center;
+    padding: 46px 0 6px 0;
+    position: relative;
+}
+.list {
+    width: 1000px;
+    height:40px;
+    text-align: center;
+    margin: 11px 0 27px 0;
+}
+.list li {
+   display: inline-block;
+   margin: 4px 0;
+}
+.list li a {
+    display: inline-block;
+    padding: 0 4px;
+    border-right: 1px solid #916691;
+    color: #666666;
+}
+.toTOP {
+    display: block;
+    position: absolute;
+    right: 8px;
+    top: 60px;
+    color: #666666;
+}
+.g-ft i {
+    float: right;
+    width: 7px;
+    height: 4px;
+    background: url(../login-images/top.png);
+    position: relative;
+    top: 4px;
+    left: 6px;
+}
+
+

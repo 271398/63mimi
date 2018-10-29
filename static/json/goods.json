@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1001,
+        "headImg": "images1/iphone7pjin.jpg",
+        "name": "苹果（APPLE）iPhone 6s 32G 公开版 玫瑰金",
+        "price": "5299.00",
+        "unit":"￥"
+    },
+    {
+        "id": 1002,
+        "headImg": "images1/ipad.jpg",
+        "name": "苹果 iPad mini 4 银色",
+        "price": "3588.00",
+        "unit":"￥"
+    },
+    {
+        "id":1003,
+        "headImg": "images1/iphone7phei.jpg",
+        "name": "苹果（APPLE） iPhone 7 亮黑色 128G",
+        "price": "6780.00",
+        "unit":"￥"
+        
+    }
+]
+
+
