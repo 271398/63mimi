@@ -1,0 +1,2073 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>米米乐商城</title>
+    <!-- 要求：首页,商品详情,购物车页面,登录,注册 -->
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/wholesale.css' %}">
+    <link rel="stylesheet" href="{% static 'iconfont/iconfont.css' %}">
+
+    <script src="{% static 'js/jquery-3.2.1.js' %}"></script>
+    <script src="{% static 'js/jquery.cookie.js' %}"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+
+
+
+{#    <script src="{% static 'js/t2.js' %}"></script>#}
+
+
+
+    
+</head>
+<body>
+ <div class="top-wrap">
+        <div class="public-main">
+            <!-- 登录注册 -->
+            <div class="user-entry">
+                <span class="login">
+                    <a href="login.html" target="_blank">登录</a>
+                </span>
+                <span class="reg">
+                    <a href="register.html" target="_blank">注册</a>
+                </span>
+            </div>
+            <!-- 顶部右菜单 -->
+            <div class="menu-right">
+                <div class="user-entry">
+                    <a class="shop" href="javascript:;" target="_blank">
+                        <em class="bignum">0</em>
+                        <i class="iconfont iconshop"></i>购物车<span class="num">0</span>件
+                    </a>
+                    <i class="iconfont iconarrow"></i>
+                    <div class="shopcar">
+                        <h1>最新加入的商品</h1>
+                        <div class="myitems">
+                            <span><img src="{%  static 'images1/loading.gif'%}" alt=""></span>
+                        </div>
+                        <div class="checkout">
+                            <p>共<span class="num">0</span>种商品</p>
+                            <a href="tb-cart.html" target="_blank">结算购物车中的商品</a>
+                        </div>
+                    </div>
+                </div>
+                <dl>
+                    <dt>
+                        <a href="javascript:;" target="_blank">用户中心</a><i class="iconfont"></i>
+                    </dt>
+                    <dd class="userzone">
+                        <ul>
+                            <li><a href="javascript:;">商品收藏</a></li>
+                            <li><a href="javascript:;">店铺收藏</a></li>
+                            <li><a href="javascript:;">收藏米米乐</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <a href="javascript:;" target="_blank">我的订单</a><i class="iconfont"></i>
+                    </dt>
+                    <dd class="myorder">
+                        <ul>
+                            <li><a href="javascript:;">待付款订单</a></li>
+                            <li><a href="javascript:;">待确认收货</a></li>
+                            <li><a href="javascript:;">待评价交易</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <a href="javascript:;" target="_blank">客户服务</a><i class="iconfont"></i>
+                    </dt>
+                    <dd class="service">
+                        <ul>
+                            <li><a href="javascript:;">帮助中心</a></li>
+                            <li><a href="javascript:;">售后服务</a></li>
+                            <li><a href="javascript:;">客服中心</a></li>
+                            <li><a href="javascript:;">在线客服</a></li>
+                            <li><a href="javascript:;">Q Q客服</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl style="margin-right:0; width:88px;">
+                    <dt style="width:88px;">
+                        <i class="iconfont iconnav"></i><a href="javascript:;">网站导航</a><i class="iconfont lasticon"></i>
+                    </dt>
+                    <dd class="channel" style="width:88px;">
+                        <ul>
+                            <li><a href="javascript:;">导购频道</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <!-- banner -->
+    <div style="width:100%; height:70px;">
+        <a href="#"><img src="{%  static 'images1/banner.jpg'%}" alt=""></a>
+    </div>
+    <!-- 页面右侧菜单 -->
+    <div class="longbar">
+        <ul class="bartop u-bar-t">
+            <li>
+                <a href="#"><img src="{%  static 'images1/right_sevice.png'%}" alt=""></a>
+                <div class="kefu">
+                    <span>联系客服</span>
+                </div>
+            </li>
+            <li>
+                <a href="#"><img src="{%  static 'images1/right_cart.png'%}" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="{%  static 'images1/right_history.png'%}" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="{%  static 'images1/right_erweima.png'%}" alt=""></a>
+                <div class="erweima">
+                    <img src="{%  static 'images1/erweima1.png'%}" alt="">
+                </div>
+            </li>
+            <li>
+                <a href="#"><img src="{%  static 'images1/right_top.png'%}" alt=""><span>TOP</span></a>
+                <div class="toTop">
+                    <span>返回顶部</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--楼梯效果-->
+    <div class="floor">
+    	<ul class="cnt">
+    		<li>0F<span class="activeFloor">米乐首页</span></li>
+    		<li>1F<span>特惠专区</span></li>
+    		<li>2F<span>企业办公</span></li>
+    		<li>3F<span>员工福利</span></li>
+    		<li>4F<span>商务礼赠</span></li>
+    		<li>5F<span>促销推荐</span></li>
+    		<li>6F<span>优店推荐</span></li>
+    		<li>7F<span>米乐帮助</span></li>
+    	</ul>
+    </div>
+   <!-- header -->
+    <div class="wrap-header">
+        <div class="public-main header-main">
+            <div class="header-top">
+                <div class="header-lft">
+                    <h1>
+                        <a href="#" target="_blank">
+                            <img src="{%  static 'images1/logo.png'%}" alt="MMLOO-logo">
+                        </a>
+                    </h1>
+                </div>
+                <div class="header-mid">
+                    <input class="searchTxt" type="text" placeholder="搜索 铸铁 试试 ^.^">
+                    <input class="search" type="button" value="搜索">
+                    <ul class="keywords">
+                        <li><a href="#">年会赞助</a></li>
+                        <li><a href="#">满50减10</a></li>
+                        <li><a href="#">年货节</a></li>
+                        <li><a href="#">手机热卖</a></li>
+                        <li><a href="#">360全景相机</a></li>
+                        <li><a href="#">iPhone 7</a></li>
+                        <li><a href="#">beats</a></li>
+                    </ul>
+                </div>
+                <div class="header-rgt">
+                    <ul>
+                        <li><a href="#"><i class="iconfont h-icon"></i>认证包邮</a></li>
+                        <li><a href="#"><i class="iconfont h-icon"></i>招商加盟</a></li>
+                        <li><a href="#"><i class="iconfont h-icon"></i>需求发布</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header-nav">
+                <div class="header-menu">
+                    <dl class="mainmenu">
+                        <dt class="allitems">
+                            <a href="#">
+                                <i class="iconfont menuicon"></i>所有商品分类<i class="iconfont arrowicon"></i>
+                            </a>
+                        </dt>
+                        <dd class="firstmenu">
+                        <!-- 主菜单 -->
+                            <ul>
+                                <li>
+                                    <div>
+                                        <a class="phonecamara" href="#"><i class="iconfont icn"></i>手机/数码</a>
+                                    </div>
+                                    <!-- 二级子菜单(手机数码) -->
+                                    <div class="subright-menu submenu-1">
+                                        <div class="shouji">
+                                            <span></span>
+                                            <h1><a href="#">手机数码</a></h1>
+                                        </div>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">手机通讯</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">IPhone</a>
+                                                <a href="#">三星</a>
+                                                <a href="#">小米</a>
+                                                <a href="#">魅族</a>
+                                                <a href="#">华为</a>
+                                                <a href="#">诺基亚</a>
+                                                <a href="#">联想</a>
+                                                <a href="#">HTC</a>
+                                                <a href="#">中兴</a>
+                                                <a href="#">索尼</a>
+                                                <a href="#">乐视</a>
+                                                <a href="#">其他</a>
+                                                <a href="#">微软</a>
+                                                <a href="#">儿童定位手表</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">手机配件</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">贴膜</a>
+                                                <a href="#">手机保护壳</a>
+                                                <a href="#">电池</a>
+                                                <a href="#">手机耳机</a>
+                                                <a href="#">充电器/数据线</a>
+                                                <a href="#">手机存储卡</a>
+                                                <a href="#">移动电源</a>
+                                                <a href="#">配件</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">摄影摄像</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">数码摄像机</a>
+                                                <a href="#">单反相机</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">数码配件</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">闪光灯</a>
+                                                <a href="#">电池/充电器</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">智能设备</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">健康检测</a>
+                                                <a href="#">智能手表</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">影音娱乐</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">耳机耳麦</a>
+                                                <a href="#">音响</a>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <a class="phonecamara" href="#"><i class="iconfont icn"></i>电脑/办公</a>
+                                    </div>
+                                    <!-- 二级子菜单(电脑/办公) -->
+                                    <div class="subright-menu submenu-2">
+                                        <div class="shouji">
+                                            <span></span>
+                                            <h1><a href="#">电脑办公</a></h1>
+                                        </div>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">电脑整机</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">电脑配件</a>
+                                                <a href="#">服务器/工作站</a>
+                                                <a href="#">显示器</a>
+                                                <a href="#">一体机</a>
+                                                <a href="#">台式机</a>
+                                                <a href="#">笔记本</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">电脑平板</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">IPAD</a>
+                                                <a href="#">surface</a>
+                                                <a href="#">国产平板</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">网络设备</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">3G上网</a>
+                                                <a href="#">路由器</a>
+                                                <a href="#">移动支付</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">办公设备</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">刷卡机</a>
+                                                <a href="#">打印机</a>
+                                                <a href="#">多功能一体机</a>
+                                                <a href="#">摄影仪</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">外设产品</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">移动硬盘</a>
+                                                <a href="#">U盘</a>
+                                                <a href="#">电脑包</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">服务产品</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">电脑软件</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">办公耗材</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">硒鼓</a>
+                                                <a href="#">办公文具</a>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <a class="phonecamara" href="#"><i class="iconfont icn"></i>食品/酒饮/生鲜/特产</a>
+                                    </div>
+                                    <!-- 二级子菜单(食品/酒饮) -->
+                                    <div class="subright-menu submenu-3">
+                                        <div class="shouji">
+                                            <span></span>
+                                            <h1><a href="#">食品酒饮</a></h1>
+                                        </div>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">进口食品</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">进口酒</a>
+                                                <a href="#">进口乳制品</a>
+                                                <a href="#">进口零食</a>
+                                                <a href="#">进口粮油</a>
+                                                <a href="#">进口调料</a>
+                                                <a href="#">进口冲调</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">酒饮</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">白酒</a>
+                                                <a href="#">红酒</a>
+                                                <a href="#">功能饮料</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">粮油</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">米面粗粮</a>
+                                                <a href="#">罐头榨菜</a>
+                                                <a href="#">调味</a>
+                                                <a href="#">方便食品</a>
+                                                <a href="#">有机绿色</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">休闲</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">冲料</a>
+                                                <a href="#">糖果</a>
+                                                <a href="#">坚果</a>
+                                                <a href="#">蜜饯</a>
+                                                <a href="#">肉脯</a>
+                                                <a href="#">零食</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">茶叶</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">绿茶</a>
+                                                <a href="#">花草茶</a>
+                                                <a href="#">花果茶</a>
+                                                <a href="#">铁观音</a>
+                                                <a href="#">乌龙</a>
+                                                <a href="#">其他茶</a>
+                                                <a href="#">红茶</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">特产</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">熟食特产</a>
+                                                <a href="#">干货特产</a>
+                                                <a href="#">腌腊特产</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">季节特色</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">月饼</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">保健食品</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">保健品</a>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <a class="phonecamara" href="#"><i class="iconfont icn"></i>服装/鞋帽/箱包</a>
+                                    </div>
+                                    <!-- 二级子菜单(服装鞋帽) -->
+                                    <div class="subright-menu submenu-4">
+                                        <div class="shouji">
+                                            <span></span>
+                                            <h1><a href="#">服装鞋帽</a></h1>
+                                        </div>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">眼镜</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">太阳镜</a>
+                                                <a href="#">反辐射镜</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">箱包</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">女包</a>
+                                                <a href="#">男包</a>
+                                                <a href="#">行李箱</a>
+                                                <a href="#">背包</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">童装</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">儿童上装</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">男鞋</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">男士单鞋</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">女鞋</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">女士休闲鞋</a>
+                                                <a href="#">女士靴子</a>
+                                                <a href="#">女士单鞋</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">女装</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">女士上衣</a>
+                                                <a href="#">女士外衣</a>
+                                                <a href="#">女士套装</a>
+                                                <a href="#">女袜</a>
+                                                <a href="#">女士裙装</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">男装</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">男袜</a>
+                                                <a href="#">男士上衣</a>
+                                                <a href="#">男士裤装</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">保健食品</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">保健品</a>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <a class="phonecamara" href="#"><i class="iconfont icn"></i>母婴/玩具</a>
+                                    </div>
+                                    <!-- 二级子菜单(母婴玩具) -->
+                                    <div class="subright-menu submenu-5">
+                                        <div class="shouji">
+                                            <span></span>
+                                            <h1><a href="#">母婴玩具</a></h1>
+                                        </div>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">奶粉</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">婴儿奶粉</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">尿裤湿巾</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">婴儿尿裤</a>
+                                                <a href="#">拉拉裤</a>
+                                                <a href="#">成人尿裤</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">洗护用品</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">宝宝护肤</a>
+                                                <a href="#">宝宝洗浴</a>
+                                                <a href="#">洗衣液</a>
+                                                <a href="#">肥皂</a>
+                                                <a href="#">日常护理</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">喂养用品</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">奶瓶奶嘴</a>
+                                                <a href="#">吸奶器</a>
+                                                <a href="#">牙胶安抚</a>
+                                                <a href="#">暖奶消毒</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">玩具乐器</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">DIY玩具</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">女装</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">女士上衣</a>
+                                                <a href="#">女士外衣</a>
+                                                <a href="#">女士套装</a>
+                                                <a href="#">女袜</a>
+                                                <a href="#">女士裙装</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">妈妈专区</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">妈咪包</a>
+                                                <a href="#">背婴带</a>
+                                                <a href="#">待产新生</a>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <a class="phonecamara" href="#"><i class="iconfont icn"></i>家居/生活/服务</a>
+                                    </div>
+                                    <!-- 二级子菜单(家居/生活/服务) -->
+                                    <div class="subright-menu submenu-6">
+                                        <div class="shouji">
+                                            <span></span>
+                                            <h1><a href="#">家居生活</a></h1>
+                                        </div>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">生活服务</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">婴儿奶粉</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">尿裤湿巾</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">餐饮</a>
+                                                <a href="#">婚纱摄影</a>
+                                                <a href="#">儿童摄影</a>
+                                                <a href="#">写真</a>
+                                                <a href="#">驾校</a>
+                                                <a href="#">鲜花</a>
+                                                <a href="#">空气净化</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">家纺</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">被子</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">家居</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">卧室家具</a>
+                                                <a href="#">客厅家具</a>
+                                                <a href="#">餐厅家具</a>
+                                                <a href="#">书房家具</a>
+                                                <a href="#">储物家具</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">灯具</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">台灯</a>
+                                                <a href="#">LED灯</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">家装建材</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">灯饰照明</a>
+                                                <a href="#">五金家电</a>
+                                                <a href="#">墙地面材料</a>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <a class="phonecamara" href="#"><i class="iconfont icn"></i>个护美妆清洁用品</a>
+                                    </div>
+                                    <!-- 二级子菜单(个护美妆/清洁用品) -->
+                                    <div class="subright-menu submenu-7">
+                                        <div class="shouji">
+                                            <span></span>
+                                            <h1><a href="#">个护美妆</a></h1>
+                                        </div>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">魅力彩妆</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">底妆</a>
+                                                <a href="#">眼部</a>
+                                                <a href="#">唇部</a>
+                                                <a href="#">美甲</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">洗发护发</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">洗发</a>
+                                                <a href="#">护发</a>
+                                                <a href="#">染发</a>
+                                                <a href="#">造型</a>
+                                                <a href="#">套装</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">香水SPA</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">香薰精油</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">身体护肤</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">沐浴</a>
+                                                <a href="#">润肤</a>
+                                                <a href="#">手足</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">口腔护理</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">牙膏/牙粉</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">女性护理</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">卫生巾</a>
+                                                <a href="#">私密护理</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">面部护肤</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">清洁</a>
+                                                <a href="#">护肤</a>
+                                                <a href="#">面膜</a>
+                                                <a href="#">剃须</a>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <a class="phonecamara" href="#"><i class="iconfont icn"></i>家用电器</a>
+                                    </div>
+                                     <!-- 二级子菜单(家用电器) -->
+                                     <div class="subright-menu submenu-8">
+                                        <div class="shouji">
+                                            <span></span>
+                                            <h1><a href="#">家用电器</a></h1>
+                                        </div>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">大家电</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">冰箱</a>
+                                                <a href="#">洗衣机</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">生活电器</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">净化器</a>
+                                                <a href="#">挂烫机/熨斗</a>
+                                                <a href="#">加湿器</a>
+                                                <a href="#">空腔护理</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="mobilecom">
+                                            <dt>
+                                                <a class="publicA" href="#">厨房电器</a>
+                                                <span class="arrow2">&gt;</span>
+                                            </dt>
+                                            <dd class="allphones">
+                                                <a href="#">电压力锅</a>
+                                                <a href="#">其他厨房电器</a>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">米活动</a></li>
+                        <li><a href="#">乐社区</a></li>
+                        <li><a href="#">商家入驻</a></li>
+                        <li><a href="#">8.8天天抢</a></li>
+                        <li><a href="#">团购</a></li>
+                        <li><a href="#">米金融</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- lunbo zone -->
+    <div class="lunbo-area">
+        <!-- 左 -->
+        <div class="lunbo-lft"></div>
+        <div class="lunbo-rgtbg"></div>
+        <div class="public-main">
+            <!-- 中 -->
+            <div class="lunbo-img">
+                <i id="pre">上一页</i>
+                <i id="next">下一页</i>
+                <ul id="list" style="width: 5432px;">
+                    <li>
+                        <a href="#"><img src="{%  static 'images1/lunbo1.png'%}" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="{%  static 'images1/lunbo2.jpg'%}" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="{%  static 'images1/lunbo3.jpg'%}" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="{%  static 'images1/lunbo4.jpg'%}" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="{%  static 'images1/lunbo5.jpg'%}" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="{%  static 'images1/lunbo6.png'%}" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="{%  static 'images1/lunbo1.png'%}" alt=""></a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="min-ul" id="list2">
+                <li class="active"><a href="#">把握时机</a></li>
+                <li><a href="#">满50减10</a></li>
+                <li><a href="#">360全景相机</a></li>
+                <li><a href="#">纸尿裤特价</a></li>
+                <li><a href="#">年货节</a></li>
+                <li><a href="#">Beats耳机</a></li>
+            </ul>
+            <!-- 右 -->
+            <div style="background-color: #FFF;" class="lunbo-rgt">
+                <div class="rgtbar">
+                    <div class="greet">
+                        <h2 class="person"><img src="{%  static 'images1/person.png'%}" alt="头像"></h2>
+                        <span class="greetingTxt">Hi,您好<br><br>欢迎来到米米乐商城</span>
+                    </div>
+                    <!-- 登录,注册 -->
+                    <div class="loginreg">
+                        <a class="login" href="login.html" target="_blank">登录</a>
+                        <a class="reg2" href="register.html" target="_blank">注册</a>
+                    </div>
+                    <!-- 通知 -->
+                    <div class="inform">
+                        <a href="#">2017春节发货通知</a><span>&nbsp;&nbsp;&nbsp;&nbsp;(2017-01-20)</span><br>
+                        <a href="#">你购物我赞助&nbsp;奖品已全部</a><span>&nbsp;&nbsp;&nbsp;&nbsp;(2017-01-20)</span>
+                    </div>
+                    <!-- 花费,机票,礼品卡 -->
+                    <div class="gift">
+                        <ul>
+                            <li><a href="#"><i class="iconfont phonbill"></i><br>话费</a></li>
+                            <li><a href="#"><i class="iconfont airplane"></i><br>机票</a></li>
+                            <li><a href="#"><i class="iconfont giftcard"></i><br>礼品卡</a></li>
+                        </ul>
+                    </div>
+                    <!-- 图片 -->
+                    <div class="giftimg">
+                        <a href="#"><img src="{%  static 'images1/gift.jpg'%}" alt="魅族手机"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- content -->
+    <div class="cont">
+        <div class="public-main">
+            <ul class="contimg">
+                <li>
+                    <p>手机app免费下载</p>
+                    <a class="imgs" href="#"><img src="{%  static 'images1/erweima1.png'%}" alt="米米乐"></a>
+                </li>
+                <li>
+                    <a class="imgs" href="#"><img src="{%  static 'images1/muying.jpg'%}" alt=""></a>
+                </li>
+                <li>
+                    <a class="imgs" href="#"><img src="{%  static 'images1/iphone6.jpg'%}" alt=""></a>
+                </li>
+                <li>
+                    <a class="imgs" href="#"><img src="{%  static 'images1/meishi.jpg'%}" alt=""></a>
+                </li>
+                <li>
+                    <a class="imgs" href="#"><img src="{%  static 'images1/watch.jpg'%}" alt=""></a>
+                </li>
+            </ul>
+            <!-- 特惠专区 -->
+            <div class="salearea">
+                <div class="bigsale-lftbar">
+                    <div class="bigsale">
+                        <h1 class="public-h">特惠专区</h1>
+                        <ul class="saleul">
+                            <li>
+                                <i class="plunge">直降</i><a href="#">手机特卖<span>低至199</span></a>
+                            </li>
+                            <li>
+                                <i class="special-price">特价</i><a href="#">平板电脑<span>轻薄易携</span></a>
+                            </li>
+                            <li>
+                                <i class="plunge">直降</i><a href="#">母婴大促<span>新品上市</span></a>
+                            </li>
+                            <li>
+                                <i class="special-price">特价</i><a href="#">品胜蓝牙耳机<span>动感音乐随心动</span></a>
+                            </li>
+                            <li>
+                                <i class="plunge">直降</i><a href="#">iPhone6上新<span>嘿，苹果手机看这里</span></a>
+                            </li>
+                            <li>
+                                <i class="special-price">特价</i><a href="#">办公文具专场<span>你的办公好帮手</span></a>
+                            </li>
+                            <li>
+                                <i class="plunge">直降</i><a href="#">联想电脑专场<span>立返100预采金</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="fieldnews">
+                        <h1 class="public-h news">行业新闻</h1>
+                        <ul class="newsul">
+                            <li>
+                                【最新】<a href="#">贵=好？买贵的不如选合适的！分享几招..</a>
+                            </li>
+                            <li>
+                                【最新】<a href="#">为什么很多人喜欢叫充电宝而不是移动电..</a>
+                            </li>
+                            <li>
+                                【最新】<a href="#">【特惠】米米乐鸡尾酒1元一瓶，约么？</a>
+                            </li>
+                            <li>
+                                【最新】<a href="#"> “蓝瘦香菇”的母婴用品有哪些？</a>
+                            </li>
+                            <li>
+                                【最新】<a href="#">【特惠】米米乐鸡尾酒1元一瓶，约么？</a>
+                            </li>
+                            <li>
+                                【最新】<a href="#">杯垫可以开花？你信么？</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 手机 -->
+                <div class="sales-rgtbar">
+                    <ul class="iphoneimgs goods" id="goods1">
+                        <!--<li>
+                             	商品详情1
+                            <img src="images1/iphone7pjin.jpg">
+                            <p class="name">Apple 7 Iphone 7 金色</p>
+                            <p class="price">￥4599</p>
+                        </li>
+                        <li>
+                             	商品详情2
+                            <img src="images1/ipad.jpg">
+                            <p>苹果 iPad mini 4 银色</p>
+                            <p>￥3588</p>
+                        </li>
+                        <li>
+                             	商品详情3
+                            <img src="images1/iphone7phei.jpg">
+                            <p>苹果Apple iPhone 7Plus 黑色 128G</p>
+                            <p>￥6999</p>
+                        </li>-->
+                    </ul>
+                    <!-- 实用办公用具 -->
+                    <div class="applications">
+                        <ul class="homeitems">
+                            <li>
+                                <a href="#"><img src="{%  static 'images1/book.jpg'%}" alt="手抄本" title="98页无线胶装手抄本"></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="{%  static 'images1/bookends.jpg'%}" alt="长尾夹" title="15mm彩色长尾夹"></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="{%  static 'images1/pen.jpg'%}" alt="柜台专用笔" title="羊肚菌柜台专用笔"></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="{%  static 'images1/projector.jpg'%}" alt="3D投影仪" title="3D家用会议商务投影仪"></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="{%  static 'images1/printer.jpg'%}" alt="惠普打印机" title="惠普1020打印机"></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="{%  static 'images1/computer.jpg'%}" alt="联想笔记本" title="联想( Lenovo ) YOGA 3Pro"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 批发超市广告 -->
+            <div class="adv">
+                <a href="#"><img src="{%  static 'images1/wholesale.jpg'%}" alt=""></a>
+            </div>
+
+            <!-- 企业办公 -->
+            <div class="enterprise-wrap">
+                <div class="enterprise">
+                    <h3>企业办公</h3>
+                    <div class="enterprise-left">
+                        <a href="#">商品推荐</a>
+                        <a href="#">办公文具</a>
+                        <a href="#">促销推荐</a>
+                        <a href="#">特惠专区</a>
+                        <a class="more" href="#">查看更多&gt;&gt;</a>
+                    </div>
+                </div>
+                <!-- Floor 1 -->
+                <ul class="f1-container">
+                    <li class="equipments">
+                        <span class="f1">1F</span>
+                        <em></em>
+                        <div>
+                            <ul class="equipment1">
+                                <li><a href="#">电脑整机</a></li>
+                                <li><a href="#">网络设备</a></li>
+                                <li><a href="#">外设产品</a></li>
+                                <li><a href="#">办公耗材</a></li>
+                                <li><a href="#">办公文具</a></li>
+                                <li><a href="#">显示器</a></li>
+                            </ul>
+                            <ul class="equipment2">
+                                <li><a href="#">平板电脑</a></li>
+                                <li><a href="#">办公设备</a></li>
+                                <li><a href="#">服务产品</a></li>
+                                <li><a href="#">硒鼓</a></li>
+                                <li><a href="#">电脑配件</a></li>
+                                <li><a href="#">一体机</a></li>
+                            </ul>
+                            <a class="watercups" href="#"><img src="{%  static 'images2/watercups.jpg'%}" alt=""></a>
+                        </div>
+                        <!-- 小轮播 -->
+                        <div class="minlunbo">
+                            <div class="lftbox">
+                                <i id="minpre"></i>
+                                <i id="minnext"></i>
+                                <ul class="imgs3" id="lftlunbo">
+                                    <li><a href="#"><img src="{%  static 'images2/danjue.jpg'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/huawei.jpg'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/toshiba.jpg'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/runcheng.jpg'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/fish.jpg'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/danjue.jpg'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/huawei.jpg'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/toshiba.jpg'%}" alt=""></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 中间轮播 -->
+                    <li class="sublft">
+                        <ul class="midlunbo">
+                            <li>
+                            <div class="midbox">
+                                <i id="midpre"></i>
+                                <i id="midnext"></i>
+                                <ul id="mid-lb">
+                                    <li><a href="#"><img src="{%  static 'images2/iphone7.png'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/iphone7.png'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/iphone7.png'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/iphone7.png'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/iphone7.png'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/iphone7.png'%}" alt=""></a></li>
+                                </ul>
+                            </div>
+                            </li>
+                        </ul>
+                        <ul class="midimgs4">
+                            <li><a href="#"><img src="{%  static 'images2/projector2.jpg'%}" alt=""></a></li>
+                            <li><a href="#"><img src="{%  static 'images2/luyouqi.jpg'%}" alt=""></a></li>
+                            <li>
+                                <a href="#"><img src="{%  static 'images2/blackpen.jpg'%}" alt=""></a>
+                                <p>得力(deli)7083 安全石墨铅芯素描 绘图HB铅笔/学生铅笔 </p>
+                                <span>￥8.80</span><strike>￥12.00</strike>
+                            </li>
+                            <li>
+                                <a href="#"><img src="{%  static 'images2/childrenpen.jpg'%}" alt=""></a>
+                                <p>Deli/得力 7063水彩笔三角笔杆18色大容量可水洗 学生绘</p>
+                                <span>￥14.80</span><strike>￥19.00</strike>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="subright">
+                        <ul class="midarea">
+                            <!-- 商品详情4 -->
+                            <li><a href="details.html" target="_blank"><img src="{%  static 'images2/diannao.jpg'%}" alt=""></a></li>
+                            <li><a href="#"><img src="{%  static 'images2/diannaobao.jpg'%}" alt=""></a></li>
+                            <li><a href="#"><img src="{%  static 'images2/guoshu.jpg'%}" alt=""></a></li>
+                            <li>
+                                <a href="#"><img src="{%  static 'images2/bianlitie.jpg'%}" alt=""></a>
+                                <p>得力（deli） 7151 便签纸/便签本/便利贴/百事贴/易事贴 </p>
+                                <span>￥9.90</span><strike>￥15.00</strike>
+                            </li>
+                            <li>
+                                <a href="#"><img src="{%  static 'images2/zhihe.jpg'%}" alt=""></a>
+                                <p>得力（deli）7702 便签纸/便条纸(147×101mm) 单本装</p>
+                                <span>￥5.90</span><strike>￥11.00</strike>
+                            </li>
+                        </ul>
+                    </li>
+                    <ul class="randarea">
+                        <li class="goods-rgt">
+                            <h4>本周排行榜</h4><em class="lft"></em><em class="rgt"></em>
+                            <ul id="slide">
+                                <li>
+                                    <div class="p-goods">
+                                        <i>1</i><p>齐心B2715中号标准办公剪</p>
+                                    </div>
+                                    <dl style="display: block; overflow: hidden; height: 3.80478px; padding-top: 0px; margin-top: 4.14597px; padding-bottom: 0px; margin-bottom: 7.25545px;">
+                                        <dt>
+                                            <a href="#">齐心 B2715 中号</a>
+                                        </dt>
+                                        <dd class="goods-pic">
+                                            <a href="#"><img src="{%  static 'images2/jiandao1.png'%}" alt=""></a>
+                                        </dd>
+                                        <dd class="price">￥4.50</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <div class="p-goods">
+                                        <i style="background: #56a7dc;">2</i><p>齐心B2715中号标准办公剪</p>
+                                    </div>
+                                    <dl>
+                                        <dt>
+                                            <a href="#">齐心 B2715 中号</a>
+                                        </dt>
+                                        <dd class="goods-pic">
+                                            <a href="#"><img src="{%  static 'images2/jiandao1.png'%}" alt=""></a>
+                                        </dd>
+                                        <dd class="price">￥4.50</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <div class="p-goods">
+                                        <i style="background: #85c7ea;">3</i><p>齐心B2715中号标准办公剪</p>
+                                    </div>
+                                    <dl>
+                                        <dt>
+                                            <a href="#">齐心 B2715 中号</a>
+                                        </dt>
+                                        <dd class="goods-pic">
+                                            <a href="#"><img src="{%  static 'images2/jiandao1.png'%}" alt=""></a>
+                                        </dd>
+                                        <dd class="price">￥4.50</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <div class="p-goods">
+                                        <i style="background: #a8d3ea;">4</i><p>齐心B2715中号标准办公剪</p>
+                                    </div>
+                                    <dl>
+                                        <dt>
+                                            <a href="#">齐心 B2715 中号</a>
+                                        </dt>
+                                        <dd class="goods-pic">
+                                            <a href="#"><img src="{%  static 'images2/jiandao1.png'%}" alt=""></a>
+                                        </dd>
+                                        <dd class="price">￥4.50</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <div class="p-goods">
+                                        <i style="background: #cbdfea;">5</i><p>齐心B2715中号标准办公剪</p>
+                                    </div>
+                                    <dl>
+                                        <dt>
+                                            <a href="#">齐心 B2715 中号</a>
+                                        </dt>
+                                        <dd class="goods-pic">
+                                            <a href="#"><img src="{%  static 'images2/jiandao1.png'%}" alt=""></a>
+                                        </dd>
+                                        <dd class="price">￥4.50</dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="rgt-pic">
+                            <a href="#"><img src="{%  static 'images2/upan.png'%}" alt=""></a>
+                            <p>闪迪（SanDisk）U盘2.0 CZ50/8G</p>
+                            <span>￥18.50</span><strike>￥15.80</strike>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+
+            <!-- 员工福利 -->
+            <div class="enterprise-wrap">
+                <div class="enterprise">
+                    <h3>员工福利</h3>
+                    <div class="enterprise-left">
+                        <a href="#">商品推荐</a>
+                        <a href="#">3C数码</a>
+                        <a href="#">营养保健</a>
+                        <a href="#">特惠专区</a>
+                        <a class="more" href="#">查看更多&gt;&gt;</a>
+                    </div>
+                </div>
+                <!-- Floor 2 -->
+                <ul class="f1-container">
+                    <li class="equipments">
+                        <span class="f1">2F</span>
+                        <em></em>
+                        <div>
+                            <ul class="equipment1">
+                                <li><a href="#">电脑整机</a></li>
+                                <li><a href="#">网络设备</a></li>
+                                <li><a href="#">外设产品</a></li>
+                                <li><a href="#">办公耗材</a></li>
+                                <li><a href="#">办公文具</a></li>
+                                <li><a href="#">显示器</a></li>
+                            </ul>
+                            <ul class="equipment2">
+                                <li><a href="#">平板电脑</a></li>
+                                <li><a href="#">办公设备</a></li>
+                                <li><a href="#">服务产品</a></li>
+                                <li><a href="#">硒鼓</a></li>
+                                <li><a href="#">电脑配件</a></li>
+                                <li><a href="#">一体机</a></li>
+                            </ul>
+                            <a class="watercups" href="#"><img src="{%  static 'images2/zhiniaoku.jpg'%}" alt=""></a>
+                        </div>
+                        <!-- 小轮播 -->
+                        <div class="minlunbo">
+                            <div class="lftbox2">
+                                <i id="minpre2"></i>
+                                <i id="minnext2"></i>
+                                <ul class="imgs3" id="lftlunbo2">
+                                    <li><a href="#"><img src="{%  static 'images2/danjue.jpg'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/hexiaomao.jpg'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/toshiba.jpg'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/runcheng.jpg'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/fish.jpg'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/danjue.jpg'%}" alt=""></a></li>
+                                     <li><a href="#"><img src="{%  static 'images2/hexiaomao.jpg'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/toshiba.jpg'%}" alt=""></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 中间轮播 -->
+                    <li class="sublft">
+                        <ul class="midlunbo">
+                            <li>
+                                <div class="midbox2">
+                                    <i id="midpre2"></i>
+                                    <i id="midnext2"></i>
+                                    <ul id="mid-lb2">
+                                        <li><a href="#"><img src="{%  static 'images2/baishitie.jpg'%}" alt=""></a></li>
+                                        <li><a href="#"><img src="{%  static 'images2/baishitie.jpg'%}" alt=""></a></li>
+                                        <li><a href="#"><img src="{%  static 'images2/baishitie.jpg'%}" alt=""></a></li>
+                                        <li><a href="#"><img src="{%  static 'images2/baishitie.jpg'%}" alt=""></a></li>
+                                        <li><a href="#"><img src="{%  static 'images2/baishitie.jpg'%}" alt=""></a></li>
+                                        <li><a href="#"><img src="{%  static 'images2/baishitie.jpg'%}" alt=""></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="midimgs4">
+                            <li><a href="#"><img src="{%  static 'images2/minniaoku.jpg'%}" alt=""></a></li>
+                            <li><a href="#"><img src="{%  static 'images2/minbag.jpg'%}" alt=""></a></li>
+                            <li>
+                                <a href="#"><img src="{%  static 'images2/hongniupai.jpg'%}" alt=""></a>
+                                <p>牛大厨 澳大利亚 其乐融融牛排套餐8片1.16kg 生鲜牛肉 </p>
+                                <span>￥146.00</span><strike>￥318.00</strike>
+                            </li>
+                            <li>
+                                <a href="#"><img src="{%  static 'images2/ziranniupai.jpg'%}" alt=""></a>
+                                <p>牛大厨 澳大利亚 原味谷饲120天肉眼牛排套餐3份450g </p>
+                                <span>￥150.00</span><strike>￥332.00</strike>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="subright">
+                        <ul class="midarea">
+                            <li><a href="#"><img src="{%  static 'images2/huawei2.jpg'%}" alt=""></a></li>
+                            <li><a href="#"><img src="{%  static 'images2/maojin.jpg'%}" alt=""></a></li>
+                            <li><a href="#"><img src="{%  static 'images2/weishengjin.jpg'%}" alt=""></a></li>
+                            <li>
+                                <a href="#"><img src="{%  static 'images2/toukui.png'%}" alt=""></a>
+                                <p>Vega越野拉力盔摩托车头盔 安全帽摩托车头盔 </p>
+                                <span>￥480.00</span><strike>￥519.00</strike>
+                            </li>
+                            <li>
+                                <!-- 商品详情1 -->
+                                <a href="details.html"><img src="{%  static 'images2/yangwoban.jpg'%}" alt=""></a>
+                                <p>居康/JUFIT 单功能仰卧板 收腹器 JFF005AB-M可折</p>
+                                <span>￥188.00</span><strike>￥258.00</strike>
+                            </li>
+                        </ul>
+                    </li>
+                    <ul class="randarea">
+                        <li class="goods-rgt">
+                            <h4>本周排行榜</h4><em class="lft"></em><em class="rgt"></em>
+                            <ul id="slide2">
+                                <li>
+                                    <div class="p-goods">
+                                        <i>1</i><p>齐心B2715中号标准办公剪</p>
+                                    </div>
+                                    <dl style="display: block; overflow: hidden; height: 3.4566px; padding-top: 0px; margin-top: 3.76657px; padding-bottom: 0px; margin-bottom: 6.59149px;">
+                                        <dt>
+                                            <a href="#">齐心 B2715 中号</a>
+                                        </dt>
+                                        <dd class="goods-pic">
+                                            <a href="#"><img src="{%  static 'images2/paobuche.jpg'%}" alt=""></a>
+                                        </dd>
+                                        <dd class="price">￥4.50</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <div class="p-goods">
+                                        <i style="background: #56a7dc;">2</i><p>齐心B2715中号标准办公剪</p>
+                                    </div>
+                                    <dl>
+                                        <dt>
+                                            <a href="#">齐心 B2715 中号</a>
+                                        </dt>
+                                        <dd class="goods-pic">
+                                            <a href="#"><img src="{%  static 'images2/jiandao1.png'%}" alt=""></a>
+                                        </dd>
+                                        <dd class="price">￥4.50</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <div class="p-goods">
+                                        <i style="background: #85c7ea;">3</i><p>齐心B2715中号标准办公剪</p>
+                                    </div>
+                                    <dl>
+                                        <dt>
+                                            <a href="#">齐心 B2715 中号</a>
+                                        </dt>
+                                        <dd class="goods-pic">
+                                            <a href="#"><img src="{%  static 'images2/jiandao1.png'%}" alt=""></a>
+                                        </dd>
+                                        <dd class="price">￥4.50</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <div class="p-goods">
+                                        <i style="background: #a8d3ea;">4</i><p>齐心B2715中号标准办公剪</p>
+                                    </div>
+                                    <dl>
+                                        <dt>
+                                            <a href="#">齐心 B2715 中号</a>
+                                        </dt>
+                                        <dd class="goods-pic">
+                                            <a href="#"><img src="{%  static 'images2/jiandao1.png'%}" alt=""></a>
+                                        </dd>
+                                        <dd class="price">￥4.50</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <div class="p-goods">
+                                        <i style="background: #cbdfea;">5</i><p>齐心B2715中号标准办公剪</p>
+                                    </div>
+                                    <dl>
+                                        <dt>
+                                            <a href="#">齐心 B2715 中号</a>
+                                        </dt>
+                                        <dd class="goods-pic">
+                                            <a href="#"><img src="{%  static 'images2/jiandao1.png'%}" alt=""></a>
+                                        </dd>
+                                        <dd class="price">￥4.50</dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="rgt-pic">
+                            <a href="#"><img src="{%  static 'images2/3dshuaizhi.jpg'%}" alt=""></a>
+                            <p>居康超薄型动派3D塑身甩脂机 懒人运动器材抖抖机减肥机</p>
+                            <span>￥1960.00</span><strike>￥1950.00</strike>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+
+            <!-- 商务礼赠 -->
+            <div class="enterprise-wrap">
+                <div class="enterprise">
+                    <h3>商务礼赠</h3>
+                    <div class="enterprise-left">
+                        <a href="#">商品推荐</a>
+                        <a href="#">手机数码</a>
+                        <a href="#">电脑外设</a>
+                        <a href="#">食品酒饮</a>
+                        <a class="more" href="#">查看更多&gt;&gt;</a>
+                    </div>
+                </div>
+                <!-- Floor 3 -->
+                <ul class="f1-container">
+                    <li class="equipments">
+                        <span class="f1">3F</span>
+                        <em></em>
+                        <div>
+                            <ul class="equipment1">
+                                <li><a href="#">电脑整机</a></li>
+                                <li><a href="#">网络设备</a></li>
+                                <li><a href="#">外设产品</a></li>
+                                <li><a href="#">办公耗材</a></li>
+                                <li><a href="#">办公文具</a></li>
+                                <li><a href="#">显示器</a></li>
+                            </ul>
+                            <ul class="equipment2">
+                                <li><a href="#">平板电脑</a></li>
+                                <li><a href="#">办公设备</a></li>
+                                <li><a href="#">服务产品</a></li>
+                                <li><a href="#">硒鼓</a></li>
+                                <li><a href="#">电脑配件</a></li>
+                                <li><a href="#">一体机</a></li>
+                            </ul>
+                            <a class="watercups" href="#"><img src="{%  static 'images2/homeniupai.png'%}" alt=""></a>
+                        </div>
+                        <!-- 小轮播 -->
+                        <div class="minlunbo">
+                            <div class="lftbox3">
+                                <i id="minpre3"></i>
+                                <i id="minnext3"></i>
+                                <ul class="imgs3" id="lftlunbo3">
+                                    <li><a href="#"><img src="{%  static 'images2/lenovo.gif'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/hexiaomao.jpg'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/toshiba.jpg'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/nikang.jpg'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/xiaomi.jpg'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/lenovo.gif'%}" alt=""></a></li>
+                                     <li><a href="#"><img src="{%  static 'images2/hexiaomao.jpg'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/toshiba.jpg'%}" alt=""></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 中间轮播 -->
+                    <li class="sublft">
+                        <ul class="midlunbo">
+                            <li>
+                                <div class="midbox3">
+                                    <i id="midpre3"></i>
+                                    <i id="midnext3"></i>
+                                    <ul id="mid-lb3">
+                                        <li><a href="#"><img src="{%  static 'images2/yangshengqi.jpg'%}" alt=""></a></li>
+                                        <li><a href="#"><img src="{%  static 'images2/yangshengqi.jpg'%}" alt=""></a></li>
+                                        <li><a href="#"><img src="{%  static 'images2/yangshengqi.jpg'%}" alt=""></a></li>
+                                        <li><a href="#"><img src="{%  static 'images2/yangshengqi.jpg'%}" alt=""></a></li>
+                                        <li><a href="#"><img src="{%  static 'images2/yangshengqi.jpg'%}" alt=""></a></li>
+                                        <li><a href="#"><img src="{%  static 'images2/yangshengqi.jpg'%}" alt=""></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="midimgs4">
+                            <li><a href="#"><img src="{%  static 'images2/xiaominote.jpg'%}" alt=""></a></li>
+                            <li><a href="#"><img src="{%  static 'images2/huasuodiannao.jpg'%}" alt=""></a></li>
+                            <li>
+                                <a href="#"><img src="{%  static 'images2/twojiandao.png'%}" alt=""></a>
+                                <p>齐心 B2852大号8节SK5标准美工刀片 10片/盒</p>
+                                <span>￥5.00</span><strike>￥8.00</strike>
+                            </li>
+                            <li>
+                                <a href="#"><img src="{%  static 'images2/lanheijiandao.png'%}" alt=""></a>
+                                <p>齐心 B2715 中号标准办公剪刀 170mm 配色 把</p>
+                                <span>￥4.50</span><strike>￥6.00</strike>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="subright">
+                        <ul class="midarea">
+                            <li><a href="#"><img src="{%  static 'images2/chedianqi.jpg'%}" alt=""></a></li>
+                            <li><a href="#"><img src="{%  static 'images2/lanyaerji.jpg'%}" alt=""></a></li>
+                            <li><a href="#"><img src="{%  static 'images2/baxi.png'%}" alt=""></a></li>
+                            <li>
+                                <a href="#"><img src="{%  static 'images2/jiaoshui.png'%}" alt=""></a>
+                                <p>齐心B2672 健康胶水 125ml 大号</p>
+                                <span>￥4.80</span><strike>￥6.00</strike>
+                            </li>
+                            <li>
+                                <a href="#"><img src="{%  static 'images2/jiashujia.png'%}" alt=""></a>
+                                <p>齐心 B3636长尾票夹 6# 15mm 60只/筒 配色 盒</p>
+                                <span>￥9.90</span><strike>￥16.00</strike>
+                            </li>
+                        </ul>
+                    </li>
+                    <ul class="randarea">
+                        <li class="goods-rgt">
+                            <h4>本周排行榜</h4><em class="lft"></em><em class="rgt"></em>
+                            <ul id="slide3">
+                                <li>
+                                    <div class="p-goods">
+                                        <i>1</i><p>苹果 Apple iPhone 7 亮黑色</p>
+                                    </div>
+                                    <dl style="display: block; overflow: hidden; height: 3.4566px; padding-top: 0px; margin-top: 3.76657px; padding-bottom: 0px; margin-bottom: 6.59149px;">
+                                        <dt>
+                                            <a href="#">齐心 B2715 中号</a>
+                                        </dt>
+                                        <dd class="goods-pic">
+                                            <a href="#"><img src="{%  static 'images2/iplianghei.jpg'%}" alt=""></a>
+                                        </dd>
+                                        <dd class="price">￥4.50</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <div class="p-goods">
+                                        <i style="background: #56a7dc;">2</i><p>苹果 Apple iPhone 7 金色</p>
+                                    </div>
+                                    <dl>
+                                        <dt>
+                                            <a href="#">齐心 B2715 中号</a>
+                                        </dt>
+                                        <dd class="goods-pic">
+                                            <a href="#"><img src="{%  static 'images2/ip7jinse.jpg'%}" alt=""></a>
+                                        </dd>
+                                        <dd class="price">￥4.50</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <div class="p-goods">
+                                        <i style="background: #85c7ea;">3</i><p>苹果 Apple iPhone 7 玫瑰金</p>
+                                    </div>
+                                    <dl>
+                                        <dt>
+                                            <a href="#">齐心 B2715 中号</a>
+                                        </dt>
+                                        <dd class="goods-pic">
+                                            <a href="#"><img src="{%  static 'images2/ip7meiguijin.jpg'%}" alt=""></a>
+                                        </dd>
+                                        <dd class="price">￥4.50</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <div class="p-goods">
+                                        <i style="background: #a8d3ea;">4</i><p>苹果 Apple iPhone 7 银色</p>
+                                    </div>
+                                    <dl>
+                                        <dt>
+                                            <a href="#">齐心 B2715 中号</a>
+                                        </dt>
+                                        <dd class="goods-pic">
+                                            <a href="#"><img src="{%  static 'images2/ip7yinse.jpg'%}" alt=""></a>
+                                        </dd>
+                                        <dd class="price">￥4.50</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <div class="p-goods">
+                                        <i style="background: #cbdfea;">5</i><p>苹果 Apple iPhone 7 黑色</p>
+                                    </div>
+                                    <dl>
+                                        <dt>
+                                            <a href="#">齐心 B2715 中号</a>
+                                        </dt>
+                                        <dd class="goods-pic">
+                                            <a href="#"><img src="{%  static 'images2/ip7heise.jpg'%}" alt=""></a>
+                                        </dd>
+                                        <dd class="price">￥4.50</dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="rgt-pic">
+                            <a href="#"><img src="{%  static 'images2/twobook.png'%}" alt=""></a>
+                            <p>齐心A1557办公必备硬皮名片册 240枚 配色 本</p>
+                            <span>￥13.80</span><strike>￥20.00</strike>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+
+            <!-- 促销推荐 -->
+            <div class="enterprise-wrap">
+                <div class="enterprise">
+                    <h3>促销推荐</h3>
+                    <div class="enterprise-left">
+                        <a href="#">商品推荐</a>
+                        <a href="#">生鲜食品</a>
+                        <a href="#">母婴玩具</a>
+                        <a href="#">数码配件</a>
+                        <a class="more" href="#">查看更多&gt;&gt;</a>
+                    </div>
+                </div>
+                <!-- Floor 4 -->
+                <ul class="f1-container">
+                    <li class="equipments">
+                        <span class="f1">4F</span>
+                        <em></em>
+                        <div>
+                            <ul class="equipment1">
+                                <li><a href="#">电脑整机</a></li>
+                                <li><a href="#">网络设备</a></li>
+                                <li><a href="#">外设产品</a></li>
+                                <li><a href="#">办公耗材</a></li>
+                                <li><a href="#">办公文具</a></li>
+                                <li><a href="#">显示器</a></li>
+                            </ul>
+                            <ul class="equipment2">
+                                <li><a href="#">平板电脑</a></li>
+                                <li><a href="#">办公设备</a></li>
+                                <li><a href="#">服务产品</a></li>
+                                <li><a href="#">硒鼓</a></li>
+                                <li><a href="#">电脑配件</a></li>
+                                <li><a href="#">一体机</a></li>
+                            </ul>
+                            <a class="watercups" href="#"><img src="{%  static 'images2/heizhenzhu.jpg'%}" alt=""></a>
+                        </div>
+                        <!-- 小轮播 -->
+                        <div class="minlunbo">
+                            <div class="lftbox3">
+                                <i id="minpre4"></i>
+                                <i id="minnext4"></i>
+                                <ul class="imgs3" id="lftlunbo4">
+                                    <li><a href="#"><img src="{%  static 'images2/apple.jpg'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/hexiaomao.jpg'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/meizu.jpg'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/kupai.jpg'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/xiaomi.jpg'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/apple.jpg'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/hexiaomao.jpg'%}" alt=""></a></li>
+                                    <li><a href="#"><img src="{%  static 'images2/meizu.jpg'%}" alt=""></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 中间轮播 -->
+                    <li class="sublft">
+                        <ul class="midlunbo">
+                            <li>
+                                <div class="midbox4">
+                                    <i id="midpre4"></i>
+                                    <i id="midnext4"></i>
+                                    <ul id="mid-lb4">
+                                        <li><a href="#"><img src="{%  static 'images2/fiveglass.jpg'%}" alt=""></a></li>
+                                        <li><a href="#"><img src="{%  static 'images2/fiveglass.jpg'%}" alt=""></a></li>
+                                        <li><a href="#"><img src="{%  static 'images2/fiveglass.jpg'%}" alt=""></a></li>
+                                        <li><a href="#"><img src="{%  static 'images2/fiveglass.jpg'%}" alt=""></a></li>
+                                        <li><a href="#"><img src="{%  static 'images2/fiveglass.jpg'%}" alt=""></a></li>
+                                        <li><a href="#"><img src="{%  static 'images2/fiveglass.jpg'%}" alt=""></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="midimgs4">
+                            <li><a href="#"><img src="{%  static 'images2/tomato.jpg'%}" alt=""></a></li>
+                            <li><a href="#"><img src="{%  static 'images2/minhonghei.jpg'%}" alt=""></a></li>
+                            <li>
+                                <a href="#"><img src="{%  static 'images2/fuhushuang.jpg'%}" alt=""></a>
+                                <p>贝维松花护肤爽身粉 140g</p>
+                                <span>￥5.00</span><strike>￥26.80</strike>
+                            </li>
+                            <li>
+                                <a href="#"><img src="{%  static 'images2/laku.png'%}" alt=""></a>
+                                <p>爸爸的选择极素超薄XXL40 拉拉裤</p>
+                                <span>￥109.00</span><strike>￥110.00</strike>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="subright">
+                        <ul class="midarea">
+                            <li><a href="#"><img src="{%  static 'images2/ip6quanwangtong.jpg'%}" alt=""></a></li>
+                            <li><a href="#"><img src="{%  static 'images2/deli8556.jpg'%}" alt=""></a></li>
+                            <li><a href="#"><img src="{%  static 'images2/liudubenpu.png'%}" alt=""></a></li>
+                            <li>
+                                <a href="#"><img src="{%  static 'images2/muyulu.jpg'%}" alt=""></a>
+                                <p>贝维婴儿洋甘菊沐浴露200ml</p>
+                                <span>￥3.00</span><strike>￥19.00</strike>
+                            </li>
+                            <li>
+                                <a href="#"><img src="{%  static 'images2/xifaru.jpg'%}" alt=""></a>
+                                <p>贝维婴儿舒敏洗发沐浴露120ML</p>
+                                <span>￥3.00</span><strike>￥16.00</strike>
+                            </li>
+                        </ul>
+                    </li>
+                    <ul class="randarea">
+                        <li class="goods-rgt">
+                            <h4>本周排行榜</h4><em class="lft"></em><em class="rgt"></em>
+                            <ul id="slide4">
+                                <li>
+                                    <div class="p-goods">
+                                        <i>1</i><p>品胜车载充电器(2A) /白</p>
+                                    </div>
+                                    <dl style="display: block; overflow: hidden; height: 3.4566px; padding-top: 0px; margin-top: 3.76657px; padding-bottom: 0px; margin-bottom: 6.59149px;">
+                                        <dt>
+                                            <a href="#">齐心 B2715 中号</a>
+                                        </dt>
+                                        <dd class="goods-pic">
+                                            <a href="#"><img src="{%  static 'images2/minchezai.jpg'%}" alt=""></a>
+                                        </dd>
+                                        <dd class="price">￥4.50</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <div class="p-goods">
+                                        <i style="background: #56a7dc;">2</i><p>品胜车载充电器(2A) /白</p>
+                                    </div>
+                                    <dl>
+                                        <dt>
+                                            <a href="#">齐心 B2715 中号</a>
+                                        </dt>
+                                        <dd class="goods-pic">
+                                            <a href="#"><img src="{%  static 'images2/minchezai.jpg'%}" alt=""></a>
+                                        </dd>
+                                        <dd class="price">￥4.50</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <div class="p-goods">
+                                        <i style="background: #85c7ea;">3</i><p>品胜车载充电器(2A) /白</p>
+                                    </div>
+                                    <dl>
+                                        <dt>
+                                            <a href="#">齐心 B2715 中号</a>
+                                        </dt>
+                                        <dd class="goods-pic">
+                                            <a href="#"><img src="{%  static 'images2/minchezai.jpg'%}" alt=""></a>
+                                        </dd>
+                                        <dd class="price">￥4.50</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <div class="p-goods">
+                                        <i style="background: #a8d3ea;">4</i><p>品胜车载充电器(2A) /白</p>
+                                    </div>
+                                    <dl>
+                                        <dt>
+                                            <a href="#">齐心 B2715 中号</a>
+                                        </dt>
+                                        <dd class="goods-pic">
+                                            <a href="#"><img src="{%  static 'images2/minchezai.jpg'%}" alt=""></a>
+                                        </dd>
+                                        <dd class="price">￥4.50</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <div class="p-goods">
+                                        <i style="background: #cbdfea;">5</i><p>品胜车载充电器(2A) /白</p>
+                                    </div>
+                                    <dl>
+                                        <dt>
+                                            <a href="#">齐心 B2715 中号</a>
+                                        </dt>
+                                        <dd class="goods-pic">
+                                            <a href="#"><img src="{%  static 'images2/minchezai.jpg'%}" alt=""></a>
+                                        </dd>
+                                        <dd class="price">￥4.50</dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="rgt-pic">
+                            <a href="#"><img src="{%  static 'images2/shitangao.jpg'%}" alt=""></a>
+                            <p>贝维全新温泉水系列婴儿湿疹膏20G</p>
+                            <span>￥5.00</span><strike>￥10.00</strike>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 优店推荐 -->
+    <div class="recommand">
+        <div class="public-main referral">
+            <h4>优店推荐</h4>
+            <ul>
+                <li>
+                    <a href="#"><img src="{%  static 'images2/zaomai.jpg'%}" alt=""></a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="#"><img src="{%  static 'images2/pibao.jpg'%}" alt=""></a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="#"><img src="{%  static 'images2/xianhua.jpg'%}" alt=""></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- guide -->
+    <div class="guide">
+        <div class="public-main">
+            <!-- guide-left -->
+            <div class="guide-lft">
+                <dl>
+                    <dt><a href="#">购物指南</a></dt>
+                    <dd><i></i><a href="" title="礼品卡的购买和使用">礼品卡的购买和使用</a></dd>
+                    <dd><i></i><a href="" title="无法取到邮件？">无法取到邮件？</a></dd>
+                    <dd><i></i><a href="" title="关于捷信分期">关于捷信分期</a></dd>
+                    <dd><i></i><a href="" title="邮费制度">邮费制度</a></dd>
+                    <dd><i></i><a href="" title="订单状态说明">订单状态说明</a></dd>
+                </dl>
+                <dl>
+                    <dt><a href="#">支付方式</a></dt>
+                    <dd><i></i><a href="" title="支付问题">支付问题</a></dd>
+                    <dd><i></i><a href="" title="在线支付">在线支付</a></dd>
+                    <dd><i></i><a href="" title="货到付款">货到付款</a></dd>
+                    <dd><i></i><a href="" title="营销方式">营销方式</a></dd>
+                </dl>
+                <dl>
+                    <dt><a href="#">配送与服务</a></dt>
+                    <dd><i></i><a href="" title="申请售后退款说明">申请售后退款说明</a></dd>
+                    <dd><i></i><a href="" title="取消订单退款说明">取消订单退款说明</a></dd>
+                    <dd><i></i><a href="" title="装机与维修服务">装机与维修服务</a></dd>
+                    <dd><i></i><a href="" title="退换货流程">退换货流程</a></dd>
+                    <dd><i></i><a href="" title="第三方配送">第三方配送</a></dd>
+                </dl>
+                <dl>
+                    <dt><i></i><a href="#" title="商家入驻">商家入驻</a></dt>
+                    <dd><i></i><a href="" title="小米鸽(兼职招商专员)">小米鸽(兼职招商专员)</a></dd>
+                    <dd><i></i><a href="" title="广告位管理与流程申报">广告位管理与流程申报</a></dd>
+                    <dd><i></i><a href="" title="活动组织与流程申报">活动组织与流程申报</a></dd>
+                    <dd><i></i><a href="" title="如何发货">如何发货</a></dd>
+                    <dd><i></i><a href="" title="我要开店">我要开店</a></dd>
+                </dl>
+            </div>
+            <!-- footer-right -->
+            <div class="guide-rgt">
+                <dl>
+                    <dt><a href="#">客服中心</a></dt>
+                    <dd style="color:#ff8a00; font-weight:bold">4006-780-781</dd>
+                    <dd>E-mail:mmloo@mmloo.com</dd>
+                    <dd>四川省成都市新南路亚华大厦六楼</dd>
+                    <dd><img style="position: relative; top:6px; margin-right:3px;" src="{%  static 'images2/qq_index.gif'%}">4006780781</dd>
+                </dl>
+                <dl>
+                    <dt><a href="#">关于米米乐商城</a></dt>
+                    <dd><img style="width: 76px; height:76px;" src="{%  static 'images2/scmmloo.png'%}" alt=""></dd>
+                    <dd class="txt">手机下单更优惠<br>快乐网购轻松<br>拥有</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <!-- 友情链接 -->
+    <div class="wrap-friendlink">
+        <div class="public-main friendlink">
+            <span><a href="#">网上商城</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">免费信息发布</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">客栈网</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">乐天代购</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">蛋糕网上订阅</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">吃喝玩乐</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">1688批发网</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">深圳童装批发</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">中国皮革网</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">户外装备</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">网上商城</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">免费信息发布</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">客栈网</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">乐天代购</a></span>
+            <span style="margin: 5px;"></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">吃喝玩乐</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">1688批发网</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">深圳童装批发</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">中国皮革网</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">户外装备</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">网上商城</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">免费信息发布</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">客栈网</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">乐天代购</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">蛋糕网上订阅</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">吃喝玩乐</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">1688批发网</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">深圳童装批发</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">中国皮革网</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">户外装备</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">蛋糕网上订阅</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">网上商城</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">免费信息发布</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">客栈网</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">乐天代购</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">蛋糕网上订阅</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">吃喝玩乐</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">1688批发网</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">深圳童装批发</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">中国皮革网</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">户外装备</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">1688批发网</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">深圳童装批发</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">中国皮革网</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">户外装备</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">网上商城</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">免费信息发布</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">客栈网</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">乐天代购</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">蛋糕网上订阅</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">吃喝玩乐</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">免费信息发布</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">客栈网</a></span>
+            <span style="margin: 5px;"></span>
+            <span><a href="#">乐天代购</a></span>
+
+        </div>
+    </div>
+    <!-- 版权 -->
+    <div class="public-main footer">
+        <ul class="list">
+            <li>
+                <a href="#"><span>电脑节</span></a>
+                <a href="#"><span>年货节</span></a>
+                <a href="#"><span>批发商城</span></a>
+                <a href="#"><span>合作及洽谈</span></a>
+                <a href="#"><span>联系我们</span></a>
+                <a href="#"><span>关于米米乐商城</span></a>
+                <a href="#"><span>商家登录</span></a>
+                <a href="#"><span>开店协议</span></a>
+                <a href="#"><span>商家入驻</span></a>
+                <a href="#"><span>手机版</span></a>
+                <a href="#"><span>友情链接</span></a>
+                <a href="#"><span style="color: #d93600;">招聘精英</span></a>
+                <a href="#"><span>米商</span></a>
+                <a href="#"><span>8.8包邮</span></a>
+            </li><br>
+           <li>© 2017 米米乐商城 www.mmloo.com 版权所有  蜀ICP备06015925号-1</li>
+           <a href="#" class="totop">返回顶部</a>
+        </ul>
+        <a href="#"><img src="{%  static 'images2/cxlogo.png'%}" alt=""></a>
+    </div>
+</body>
+</html>

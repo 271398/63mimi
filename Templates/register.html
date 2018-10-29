@@ -1,0 +1,100 @@
+{% load static %}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎注册</title>
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/reg.css' %}">
+    
+    <script src="{% static 'js/jquery-3.2.1.js' %}"></script>
+    <script src="{% static 'js/register.js' %}"></script>
+
+
+{#    <script src="{% static 'js/t2.js' %}"></script>#}
+
+
+
+</head>
+<body>
+
+    <div class="g-top">
+        <a href="#"><img src="{%  static 'reg-images/banner.jpg'%}" alt="米米乐"></a>
+    </div>
+    <div class="g-wrap">
+        <div class="g-hd">
+            <div class="u-lft">
+                <a href="#"><img src="{%  static 'reg-images/logo.png'%}" alt=""></a>
+                <p>欢迎注册</p>
+            </div>
+            <div class="u-rgt">
+                <span>已注册，请&nbsp;</span><a href="login.html" target="_blank">登录&gt;</a>
+            </div>
+
+        </div>
+        <div class="g-ct">
+            <h1><span>个人用户注册</span></h1>
+            <form class="u-form">
+            	<!--手机号-->
+                <input id="phonenum" class="u-btn-user" type="text" placeholder="手机号码"><i class="user"></i><br>
+                <em id="txt1">请输入11位手机号</em>
+                <div class="tips1"></div>
+				<!--密码-->
+                <input id="pwd" class="u-btn-pwd" type="password" placeholder="设置密码"><i class="pwd"></i><br>
+                <em id="txt2">6-20位字符，可由英文、数字及标点符号组成</em>
+                <div class="tips2"></div>
+            	<!--验证码-->
+                <input id="code" class="u-btn-code" type="text" placeholder="验证码"><i class="code"></i>
+               	 <!--获取验证码-->
+                <input id="code2" class="u-btn-num" type="text" value="3333" disabled="disabled"><a class="change">看不清，换一张</a><br>
+                <em id="txt3">请输入验证码</em>
+                <div class="tips3"></div>
+            	<!--短信验证码-->
+                <input id="msg" class="u-btn-msg" type="text" placeholder="短信验证码"><i class="msg"></i>
+            	<!--获取短信验证码-->
+                <input id="gainmsg" class="u-btn-gain" type="button" value="获取短信验证码" disabled="disabled"><br>
+                <em id="txt4">请输入6位短信验证码</em>
+                <div class="tips4"></div>
+            	<!--好友推荐码-->
+                <input id="frd" class="u-btn-frd" type="text" placeholder="好友推荐码(非必填)"><i class="frd"></i><br>
+                <em id="txt5">请输入6位好友推荐码</em>
+                <div class="tips5"></div>
+            	<!--服务协议-->
+                <input id="box" class="u-btn-box" type="checkbox" checked="checked"><span>阅读并同意</span><a class="deal" href="#">服务协议</a><br>
+            	<!--注册-->
+                <input id="reg" class="u-btn-reg" type="button" value="立即注册">
+            </form>
+        </div>
+        <div class="g-ft">
+            <ul class="list">
+                <li>
+                    <a href="#">电脑节</a>
+                    <a href="#">年货节</a>
+                    <a href="#">批发商城</a>
+                    <a href="#">合作及洽谈</a>
+                    <a href="#">联系我们</a>
+                    <a href="#">关于米米乐商城</a>
+                    <a href="#">商家登录</a>
+                    <a href="#">开店协议</a>
+                    <a href="#">商家入驻</a>
+                    <a href="#">手机版</a>
+                    <a href="#">友情链接</a>
+                    <a href="#" style="color:#ff0000;">招聘精英</a>
+                    <a href="#">米商</a>
+                    <a href="#">8.8包邮</a>
+                </li><br>
+                <li>© 2017 米米乐商城 www.mmloo.com 版权所有  蜀ICP备06015925号-1</li>
+            </ul>
+            <a href="#"><img src="{%  static 'images2/cxlogo.png'%}" alt=""></a>
+            <a class="toTOP" href="">回到顶部<i></i></a>
+        </div>
+    </div>
+
+t2.js:7:5
+
+</body>
+</html>

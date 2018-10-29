@@ -1,0 +1,83 @@
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>米米乐-登录中心</title>
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <script src="{% static 'js/jquery-3.2.1.js' %}"></script>
+    <script src="{% static 'js/login.js' %}"></script>
+
+
+{#    <script src="{% static 'js/t2.js' %}"></script>#}
+
+
+
+</head>
+<body>
+ <div>
+        <div class="top">
+            <a href="#"><img src="{%  static 'login-images/top.jpg'%}" alt=""></a>
+        </div>
+        <div class="public-main">
+            <div class="logo">
+                <a href="#"><img src="{%  static 'login-images/logo.png'%}" alt=""></a>
+            </div>
+            <div class="wrap-login">
+                <div class="login-lft">
+                    <img src="{%  static 'login-images/loginbg.jpg'%}" alt="">
+                </div>
+                <div class="loginarea">
+                    <div class="login">
+                        <h1>用户登录</h1>
+                        <i></i><input class="username" type="text" placeholder="手机号/会员号/邮箱"><br>
+                        <span id="txt"></span>
+                        <em></em><input class="pwd" type="password" value=""><br>
+                        <span id="pwdtxt"></span>
+                        <input class="loginbtn" type="button" value="登录"><a href="#" style="color:#0066cc;">忘记密码？</a><br>
+                        <a class="huiyuan" href="#">还不是本站会员？立即</a>
+                        <input class="regbtn" type="button" value="注册">
+                    </div>
+                    <ul class="partner">
+                        <li>您可以用合作伙伴账号登录：</li>
+                        <li>
+                            <a href="#" class="qq"><i></i>QQ登录</a>
+                            <a href="#" class="weibo"><i></i>新浪微博</a>
+                            <a href="#" class="zhifubao"><i></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="public-main footer">
+            <ul class="list">
+                <li>
+                    <a href="#">电脑节</a>
+                    <a href="#">年货节</a>
+                    <a href="#">批发商城</a>
+                    <a href="#">合作及洽谈</a>
+                    <a href="#">联系我们</a>
+                    <a href="#">关于米米乐商城</a>
+                    <a href="#">商家登录</a>
+                    <a href="#">开店协议</a>
+                    <a href="#">商家入驻</a>
+                    <a href="#">手机版</a>
+                    <a href="#">友情链接</a>
+                    <a href="#" style="color:#ff0000;">招聘精英</a>
+                    <a href="#">米商</a>
+                    <a href="#">8.8包邮</a>
+                </li><br>
+               <li>© 2017 米米乐商城 www.mmloo.com 版权所有  蜀ICP备06015925号-1</li>
+            </ul>
+            <a href="#"><img src="{%  static 'images2/cxlogo.png'%}" alt=""></a>
+            <a class="toTOP" href="">回到顶部<i></i></a>
+        </div>
+    </div>
+
+t2.js:7:5
+</body>
+</html>

@@ -1,0 +1,294 @@
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情</title>
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/details.css' %}">
+    <link rel="stylesheet" href="{% static 'iconfont/iconfont.css' %}">
+    
+    <script src="{% static 'js/jquery-3.2.1.js' %}"></script>
+    <script src="{% static 'js/jquery.cookie.js' %}"></script>
+    <script src="{% static 'js/details.js' %}"></script>
+
+
+{#    <script src="{% static 'js/t2.js' %}"></script>#}
+
+
+
+</head>
+<body>
+<div class="g-t-wrap">
+        <div class="g-t-layout">
+            <div class="m-top">
+                <div class="m-t-lft">
+                    <a href="login.html">登录</a>
+                    <a href="register.html">注册</a>
+                </div>
+                <div class="m-t-rgt">
+                    <ul>
+                        <li>
+                            <i class="iconfont icn-car"></i><a href="#">购物车<span>0</span>件</a><i class="iconfont"></i>
+                            <div class="shopcar">
+                                <h1>最新加入的商品</h1>
+                                <div class="myitems">
+                                    <span><img src="{%  static 'images1/loading.gif'%}" alt=""></span>
+                                </div>
+                                <div class="checkout">
+                                    <p>共<span class="num">0</span>种商品</p>
+                                    <a href="tb-cart.html" target="_blank">结算购物车中的商品</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">用户中心</a><i class="iconfont"></i>
+                            <div class="userzone">
+                                <dl>
+                                    <dd><a href="javascript:;">商品收藏</a></dd>
+                                    <dd><a href="javascript:;">店铺收藏</a></dd>
+                                    <dd><a href="javascript:;">收藏米米乐</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">我的订单</a><i class="iconfont"></i>
+                            <div class="myorder">
+                                <dl>
+                                    <dd><a href="javascript:;">待付款订单</a></dd>
+                                    <dd><a href="javascript:;">待确认收货</a></dd>
+                                    <dd><a href="javascript:;">待评价交易</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">客户服务</a><i class="iconfont"></i>
+                            <div class="service">
+                                <dl>
+                                    <dd><a href="javascript:;">帮助中心</a></dd>
+                                    <dd><a href="javascript:;">售后服务</a></dd>
+                                    <dd><a href="javascript:;">客服中心</a></dd>
+                                    <dd><a href="javascript:;">在线客服</a></dd>
+                                    <dd><a href="javascript:;">Q Q客服</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="iconfont icn-nav"></i><a href="#">网站导航</a><i class="iconfont"></i>
+                            <div class="channel" style="width:88px;">
+                                <dl>
+                                    <dd><a href="javascript:;">导购频道</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <h1><a href="#"><img src="{%  static 'details-images/banner.jpg'%}" alt="米米乐商城"></a></h1>
+    </div>
+    <!-- header -->
+    <div class="g-h-wrap">
+        <div class="g-h-layout">
+            <div class="m-h-top">
+                <h1><a href="#"><img src="{%  static 'details-images/logo.png'%}" alt=""></a></h1>
+                <div class="m-h-m">
+                    <input class="txt" type="text" placeholder="请输入您要搜索的商品的关键字">
+                    <input class="btn" type="button" value="搜索">
+                    <ul>
+                        <li><a href="#">年会赞助</a></li>
+                        <li><a href="#">满50减10</a></li>
+                        <li><a href="#">年货节</a></li>
+                        <li><a href="#">手机热卖</a></li>
+                        <li><a href="#">360全景相机</a></li>
+                        <li><a href="#">iPhone 7</a></li>
+                        <li><a href="#">beats</a></li>
+                    </ul>
+                </div>
+                <div class="m-h-rgt">
+                    <ul>
+                        <li><a href="#"><i class="iconfont"></i><span>认证包邮</span></a></li>
+                        <li><a href="#"><i class="iconfont"></i><span>招商加盟</span></a></li>
+                        <li><a href="#"><i class="iconfont"></i><span>需求发布</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="m-h-btm">
+                <ul>
+                    <li>
+                        <div>
+                            <a href="#"><i class="iconfont icn-menu"></i>所有商品分类<i class="iconfont icn-arr"></i></a>
+                        </div>
+                        <!-- <ul>二级菜单放这</ul> -->
+                    </li>
+                    <li>
+                        <a href="index.html" target="_blank">首页</a>
+                    </li>
+                    <li>
+                        <a href="#">米活动</a>
+                    </li>
+                    <li>
+                        <a href="#">乐社区</a>
+                    </li>
+                    <li>
+                        <a href="#">商家入驻</a>
+                    </li>
+                    <li>
+                        <a href="#">8.8天天抢</a>
+                    </li>
+                    <li>
+                        <a href="#">团购</a>
+                    </li>
+                    <li>
+                        <a href="#">米金融</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 右侧工具栏 -->
+    <div class="g-wh-rgtbar">
+        <ul class="u-bar-t">
+            <li>
+                <a href="#"><img src="{%  static 'images1/right_sevice.png'%}" alt=""></a>
+                <div class="kefu">
+                    <span>联系客服</span>
+                </div>
+            </li>
+            <li>
+                <a href="#"><img src="{%  static 'images1/right_cart.png'%}" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="{%  static 'images1/right_history.png'%}" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="{%  static 'images1/right_erweima.png'%}" alt=""></a>
+                <div class="erweima">
+                    <img src="{%  static 'images1/erweima1.png'%}" alt="">
+                </div>
+            </li>
+            <li>
+                <a href="javascript:;"><img src="{%  static 'images1/right_top.png'%}" alt=""><span>TOP</span></a>
+                <div class="toTop">
+                    <span>返回顶部</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- goods details -->
+    <div class="g-gds-layout">
+        <div class="m-gds-top">
+            <div>
+                <div class="gds-t-lft">
+                    <p> 首页 &gt; 手机数码 &gt; 手机通讯 &gt; IPhone &gt; 苹果（APPLE）iPhone 6s 32G 公开版 玫瑰金</p>
+                </div>
+                <div class="gds-t-rgt">
+                    <p>
+                        <span>举报中心</span><i></i>
+                        </p><div class="f-gds-rpt">
+                            <a href="#">举报该商品</a>
+                        </div>
+                    <p></p>
+                </div>
+            </div>
+            <div class="gds-btm">
+                <p class="name">苹果（APPLE）iPhone 6s 32G 公开版 玫瑰金</p>
+                <span>至大之作，至薄之作，不仅大，更加大放异彩，大有动力，大有能效，改变摄像，有颠覆摄像，全凭指尖~</span>
+            </div>
+        </div>
+        <div class="m-gds-m">
+            <div class="u-gds-lft">
+                <!-- 小图区域 -->
+                <div class="u-gdsbox">
+                    <img src="{%  static 'details-images/jin1.png'%}" alt="" class="myImgs">
+                    <div id="u-floatbox"></div>
+                </div>
+                <!-- 显示大图区域 -->
+                <div id="showImg">
+                    <img src="{%  static 'details-images/jin1.png'%}" alt="" class="myImgs">
+                </div>
+                <!-- 显示大图区域end -->
+                <ul id="u-mingds">
+                    <li><img src="{%  static 'details-images/jin1.png'%}" alt="" class="myImgs"></li>
+                    <li><img src="{%  static 'details-images/jin2.jpg'%}" alt="" class="myImgs"></li>
+                    <li><img src="{%  static 'details-images/samgsun.jpg'%}" alt="" class="myImgs"></li>
+                    <li><img src="{%  static 'details-images/huawei.jpg'%}" alt="" class="myImgs"></li>
+                </ul>
+                <div class="f-gds">
+                    <a href=""><img src="{%  static 'details-images/fapiao.png'%}" alt="">开具增票</a>
+                    <a href=""><img src="{%  static 'details-images/caigou.png'%}" alt="">批发采购</a>
+                    <a href=""><img src="{%  static 'details-images/zhangqi.png'%}" alt="">信用账期</a>
+                </div>
+            </div>
+            <div class="u-gds-m">
+                <div class="f-buy">
+                    <label>零 售 价：</label><p class="price p-color"> ¥4599.00</p><br>
+                    <label>批 发 价：</label><p><span>¥4299.00</span> 一个也批发，单单返钱花</p><br>
+                    <label>商品评价：</label><p><i class="star"></i>(60条评论)</p><br>
+                    <label>至全国：  </label><p>运费：	10.00元 ，满49元包邮 由 <em>官方店铺</em> 发货</p>
+                </div>
+                <div>
+                    <div class="f-add-1">
+                        <div>
+                            <label>购买数量：</label><span class="num">1</span>
+                            <input class="add" type="button" value="+">
+                            <input class="mtp" type="button" value="-"><br>
+                        </div>
+                        <div class="f-add-2">
+                            <input class="buygds" type="button" value="立即购买">
+                            <input class="addgds" type="button" value="添加购物车"><br>
+                        </div>
+                        <div class="f-share">
+                            <a href="#"><img src="{%  static 'details-images/share.png'%}" alt="">分享<span>0</span></a>
+                            <a href="#"><img src="{%  static 'details-images/shoucang.png'%}" alt="">收藏商品<span>0</span></a>
+                        </div>
+                        <div class="f-ptn">
+                            <a href="#"><img src="{%  static 'details-images/weibo.png'%}" alt=""></a>
+                            <a href="#"><img src="{%  static 'details-images/tengxun.png'%}" alt=""></a>
+                            <a href="#"><img src="{%  static 'details-images/zone.png'%}" alt=""></a>
+                            <a href="#"><img src="{%  static 'details-images/qq.png'%}" alt=""></a>
+                            <a href="#"><img src="{%  static 'details-images/weixin.png'%}" alt=""></a>
+                            <a href="#"><img src="{%  static 'details-images/renren.png'%}" alt=""></a>
+                            <a href="#"><img src="{%  static 'details-images/dou.png'%}" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="u-gds-rgt">
+                <div class="u-store-t">
+                    <h1>官方店铺</h1>
+                    <p>综合评分：<span class="levelbar"></span><span class="level">4.9</span>分<i class="hand"></i></p>
+                </div>
+                <div class="u-store-m">
+                    <dl>
+                        <dt class="u-store-mark">
+                            <span>店铺动态评分</span>
+                            <span>与行业相比</span>
+                        </dt>
+                        <dd>描述相符<span>4.9 分</span><em></em><b>持平</b><i><strong></strong></i></dd>
+                        <dd>服务态度<span>4.9 分</span><em></em><b>持平</b><i><strong></strong></i></dd>
+                        <dd>发货速度<span>4.9 分</span><em></em><b>持平</b><i><strong></strong></i></dd>
+                    </dl>
+                    <p>
+                        <span>联系方式：</span><a href="#"><img src="{%  static 'details-images/qq4.png'%}" alt=""></a><a href="#"><img src="{%  static 'details-images/53kf.jpg'%}" alt=""></a>
+                    </p>
+                </div>
+                <div class="u-store-btm">
+                    <div>
+                        <p>公司名称： <span>米米乐商城</span></p>
+                        <p>所 &nbsp;在  &nbsp;地： <span>四川 成都市 武侯区</span></p>
+                    </div>
+                    <div class="u-store-log">
+                        <a href="#">进入商家店铺</a>
+                        <a href="#">收藏店铺<span>133</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="m-gds-btm"></div>
+    </div>
+</body>
+</html>
