@@ -29,17 +29,26 @@
         <div class="public-main">
             <!-- 登录注册 -->
             <div class="user-entry">
-                <span class="login">
-                    <a href="login.html" target="_blank">登录</a>
-                </span>
-                <span class="reg">
-                    <a href="register.html" target="_blank">注册</a>
-                </span>
+                {% if tel %}
+                    <span class="login">
+                        欢迎:
+                    </span>
+                    <span class="reg">
+                    {{ tel }}
+                    </span>
+                {% else %}
+                    <span class="login">
+                        <a href="{% url 'ml:login' %}" target="_blank">登录</a>
+                    </span>
+                    <span class="reg">
+                        <a href="{% url 'ml:register' %}" target="_blank">注册</a>
+                    </span>
+                {% endif %}
             </div>
             <!-- 顶部右菜单 -->
             <div class="menu-right">
                 <div class="user-entry">
-                    <a class="shop" href="javascript:;" target="_blank">
+                    <a class="shop" href="{% url 'ml:tb-cart' %}" target="_blank">
                         <em class="bignum">0</em>
                         <i class="iconfont iconshop"></i>购物车<span class="num">0</span>件
                     </a>
@@ -51,7 +60,7 @@
                         </div>
                         <div class="checkout">
                             <p>共<span class="num">0</span>种商品</p>
-                            <a href="tb-cart.html" target="_blank">结算购物车中的商品</a>
+                            <a href="{% url 'ml:tb-cart' %}" target="_blank">结算购物车中的商品</a>
                         </div>
                     </div>
                 </div>
@@ -909,27 +918,32 @@
                 <i id="pre">上一页</i>
                 <i id="next">下一页</i>
                 <ul id="list" style="width: 5432px;">
-                    <li>
-                        <a href="#"><img src="{%  static 'images1/lunbo1.png'%}" alt=""></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="{%  static 'images1/lunbo2.jpg'%}" alt=""></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="{%  static 'images1/lunbo3.jpg'%}" alt=""></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="{%  static 'images1/lunbo4.jpg'%}" alt=""></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="{%  static 'images1/lunbo5.jpg'%}" alt=""></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="{%  static 'images1/lunbo6.png'%}" alt=""></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="{%  static 'images1/lunbo1.png'%}" alt=""></a>
-                    </li>
+{#                    <li>#}
+{#                        <a href="#"><img src="{%  static 'images1/lunbo1.png'%}" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="{%  static 'images1/lunbo2.jpg'%}" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="{%  static 'images1/lunbo3.jpg'%}" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="{%  static 'images1/lunbo4.jpg'%}" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="{%  static 'images1/lunbo5.jpg'%}" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="{%  static 'images1/lunbo6.png'%}" alt=""></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#"><img src="{%  static 'images1/lunbo1.png'%}" alt=""></a>#}
+{#                    </li>#}
+                    {% for whell in whells %}
+                        <li>
+                            <a href="#"><img src="{{ whell.headIng }}" alt=""></a>
+                        </li>
+                    {% endfor %}
                 </ul>
             </div>
             <ul class="min-ul" id="list2">
@@ -949,8 +963,13 @@
                     </div>
                     <!-- 登录,注册 -->
                     <div class="loginreg">
-                        <a class="login" href="login.html" target="_blank">登录</a>
-                        <a class="reg2" href="register.html" target="_blank">注册</a>
+                        {% if tel %}
+                            <a class="login" href="#">用户:{{ tel }}</a>
+                            <a class="reg2" href="/logout/">退出</a>
+                        {% else %}
+                            <a class="login" href="{% url 'ml:login' %}" target="_blank">登录</a>
+                            <a class="reg2" href="{% url 'ml:register' %}" target="_blank">注册</a>
+                        {% endif %}
                     </div>
                     <!-- 通知 -->
                     <div class="inform">

@@ -32,19 +32,19 @@
                 <p>欢迎注册</p>
             </div>
             <div class="u-rgt">
-                <span>已注册，请&nbsp;</span><a href="login.html" target="_blank">登录&gt;</a>
+                <span>已注册，请&nbsp;</span><a href="{% url 'ml:login' %}" target="_blank">登录&gt;</a>
             </div>
 
         </div>
         <div class="g-ct">
             <h1><span>个人用户注册</span></h1>
-            <form class="u-form">
+            <form class="u-form" action="/register/" method="post">
             	<!--手机号-->
-                <input id="phonenum" class="u-btn-user" type="text" placeholder="手机号码"><i class="user"></i><br>
+                <input id="phonenum" class="u-btn-user" type="text" placeholder="手机号码" name="tel"><i class="user"></i><br>
                 <em id="txt1">请输入11位手机号</em>
                 <div class="tips1"></div>
 				<!--密码-->
-                <input id="pwd" class="u-btn-pwd" type="password" placeholder="设置密码"><i class="pwd"></i><br>
+                <input id="pwd" class="u-btn-pwd" type="password" placeholder="设置密码" name="pword"><i class="pwd"></i><br>
                 <em id="txt2">6-20位字符，可由英文、数字及标点符号组成</em>
                 <div class="tips2"></div>
             	<!--验证码-->
@@ -66,7 +66,7 @@
             	<!--服务协议-->
                 <input id="box" class="u-btn-box" type="checkbox" checked="checked"><span>阅读并同意</span><a class="deal" href="#">服务协议</a><br>
             	<!--注册-->
-                <input id="reg" class="u-btn-reg" type="button" value="立即注册">
+                <input id="reg" class="u-btn-reg" type="submit" value="立即注册">
             </form>
         </div>
         <div class="g-ft">

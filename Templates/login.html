@@ -31,15 +31,16 @@
                 <div class="login-lft">
                     <img src="{%  static 'login-images/loginbg.jpg'%}" alt="">
                 </div>
+                <form action="/login/" method="post">
                 <div class="loginarea">
                     <div class="login">
                         <h1>用户登录</h1>
-                        <i></i><input class="username" type="text" placeholder="手机号/会员号/邮箱"><br>
+                        <i></i><input class="username" type="text" placeholder="手机号/会员号/邮箱" name="tel"><br>
                         <span id="txt"></span>
-                        <em></em><input class="pwd" type="password" value=""><br>
+                        <em></em><input class="pwd" type="password" value=""  name="pw"><br>
                         <span id="pwdtxt"></span>
-                        <input class="loginbtn" type="button" value="登录"><a href="#" style="color:#0066cc;">忘记密码？</a><br>
-                        <a class="huiyuan" href="#">还不是本站会员？立即</a>
+                        <input class="loginbtn" type="submit" value="登录"><a href="#" style="color:#0066cc;">忘记密码？</a><br>
+                        <a class="huiyuan" href="{% url 'ml:register' %}">还不是本站会员？立即</a>
                         <input class="regbtn" type="button" value="注册">
                     </div>
                     <ul class="partner">
@@ -51,6 +52,7 @@
                         </li>
                     </ul>
                 </div>
+                </form>
             </div>
         </div>
         <div class="public-main footer">

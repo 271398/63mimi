@@ -26,8 +26,8 @@
         <div class="g-t-layout">
             <div class="m-top">
                 <div class="m-t-lft">
-                    <a href="login.html">登录</a>
-                    <a href="register.html">注册</a>
+                    <a href="{% url 'ml:login' %}">登录</a>
+                    <a href="{% url 'ml:details' %}">注册</a>
                 </div>
                 <div class="m-t-rgt">
                     <ul>
@@ -40,7 +40,7 @@
                                 </div>
                                 <div class="checkout">
                                     <p>共<span class="num">0</span>种商品</p>
-                                    <a href="tb-cart.html" target="_blank">结算购物车中的商品</a>
+                                    <a href="{% url 'ml:tb-cart' %}" target="_blank">结算购物车中的商品</a>
                                 </div>
                             </div>
                         </li>
