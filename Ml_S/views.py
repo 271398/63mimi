@@ -50,19 +50,19 @@ def register(request):
 
     elif request.method=='POST':
         tel=request.POST.get('tel')
-        pword=request.POST.get('pword')
+        password=request.POST.get('pword')
         #
-        print(tel,pword)
+        print(tel,password)
         print("wocoa")
 
 
 
         user=User()
         user.tel=tel
-        user.password=pword
+        user.password = generate_password(password)
         user.token = generate_token()
         user.save()
-        print(user.token)
+        print("好了")
 
         response=redirect('ml:index')
 
@@ -72,16 +72,9 @@ def register(request):
         #设置session
         request.session['token'] = user.token
         request.session.set_expiry(60)
-        return redirect('ml:index')
+        return response
 
-#生成token
-def generate_token():
 
-    token=str(time.time())+str(random.random())
-    #md5加密:生成128位即16个字节
-    md5=hashlib.md5()
-    md5.update(token.encode('utf-8'))
-    return md5.hexdigest()
 
 #登录
 def login(request):
@@ -91,13 +84,14 @@ def login(request):
 
     elif request.method=='POST':
         tel=request.POST.get("tel")
-        pw=request.POST.get('pw')
-        print(tel,pw)
+        password=request.POST.get('pw')
+        print(tel,password)
+        password = generate_password(password)
 
         # 验证
         # 数据库能找到，登录成功
         # 数据库找不到，登录失败
-        users = User.objects.filter(tel=tel).filter(password=pw)
+        users = User.objects.filter(tel=tel).filter(password=password)
         if users.count():  # 存在
             user = users.first()
 
@@ -124,3 +118,19 @@ def logout(request):
     # response.delete_cookie('token')
     request.session.flush()
     return response
+
+#生成token
+def generate_token():
+
+    token=str(time.time())+str(random.random())
+    #md5加密:生成128位即16个字节
+    md5=hashlib.md5()
+    md5.update(token.encode('utf-8'))
+    return md5.hexdigest()
+
+
+#password加密
+def generate_password(password):
+    sha = hashlib.sha512()
+    sha.update(password.encode('utf-8'))
+    return sha.hexdigest()
