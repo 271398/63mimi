@@ -35,10 +35,14 @@ def details(request):
 
 
 def tb_cart(request):
-    token = request.COOKIES.get('token')
+    token = request.session.get('token')
     users= User.objects.filter(token=token)
-    user=users.first()
-    return render(request, 'tb-cart.html', context={'tel':user.tel})
+    if users.count():
+        user = users.first()
+        print(user.tel)
+        return render(request, 'tb-cart.html', context={'tel':user.tel})
+    else:
+        return render(request, 'tb-cart.html')
 
 
 
