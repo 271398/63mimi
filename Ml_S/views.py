@@ -16,12 +16,16 @@ def index(request):
     #轮播图
     whells = Wheel1.objects.all()
     # 获取cookie
-    token = request.COOKIES.get('token')
+    # token = request.COOKIES.get('token')
 
+    token = request.session.get('token')
     users = User.objects.filter(token=token)
-    user = users.first()
-    print(user.tel)
-    return render(request, 'index.html', context={'tel': user.tel,'whells': whells})
+    if users.count():
+        user = users.first()
+        print(user.tel)
+        return render(request, 'index.html', context={'tel':user.tel,'whells': whells})
+    else:
+        return render(request, 'index.html', context={'whells': whells})
 
 
 
@@ -63,8 +67,13 @@ def register(request):
         response=redirect('ml:index')
 
         #讲token设为cookie
-        response.set_cookie('token',user.token)
-        return response
+        # response.set_cookie('token',user.token)
+        # return response
+        #设置session
+        request.session['token'] = user.token
+        request.session.set_expiry(60)
+        return redirect('ml:index')
+
 #生成token
 def generate_token():
 
@@ -93,12 +102,15 @@ def login(request):
             user = users.first()
 
             # 重定向首页
-            response = redirect('ml:index')
+            # response = redirect('ml:index')
 
             # 设置cookie
-            response.set_cookie('token',user.token )
-
-            return response
+            # response.set_cookie('token',user.token )
+            #
+            # return response
+            request.session['token'] = user.token
+            request.session.set_expiry(60)
+            return redirect('ml:index')
 
         else:
             return HttpResponse('用户名或密码错误!')
@@ -107,8 +119,8 @@ def login(request):
 def logout(request):
     # 重定向首页
     response = redirect('ml:index')
-
-    # 删除cookie
-    response.delete_cookie('token')
-
+    #
+    # # 删除cookie
+    # response.delete_cookie('token')
+    request.session.flush()
     return response
