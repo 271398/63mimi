@@ -5,6 +5,7 @@ from django.db import models
 class User(models.Model):
     tel=models.CharField(max_length=600)
     password=models.CharField(max_length=600)
+    token=models.CharField(max_length=256,default='')
 
 class Goods(models.Model):
     headImg=models.CharField(max_length=600)
