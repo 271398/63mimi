@@ -16,8 +16,6 @@
     <script src="{% static 'js/details.js' %}"></script>
 
 
-{#    <script src="{% static 'js/t2.js' %}"></script>#}
-
 
 
 </head>
@@ -27,7 +25,7 @@
             <div class="m-top">
                 <div class="m-t-lft">
                     <a href="{% url 'ml:login' %}">登录</a>
-                    <a href="{% url 'ml:details' %}">注册</a>
+                    <a href="{% url 'ml:register' %}">注册</a>
                 </div>
                 <div class="m-t-rgt">
                     <ul>
@@ -195,7 +193,9 @@
                 </div>
             </div>
             <div class="gds-btm">
-                <p class="name">苹果（APPLE）iPhone 6s 32G 公开版 玫瑰金</p>
+                <p class="name">{% for good in goods %}
+                        {{ good.name }}
+                    {% endfor %}</p>
                 <span>至大之作，至薄之作，不仅大，更加大放异彩，大有动力，大有能效，改变摄像，有颠覆摄像，全凭指尖~</span>
             </div>
         </div>
@@ -203,16 +203,49 @@
             <div class="u-gds-lft">
                 <!-- 小图区域 -->
                 <div class="u-gdsbox">
+
                     <img src="{%  static 'details-images/jin1.png'%}" alt="" class="myImgs">
                     <div id="u-floatbox"></div>
                 </div>
                 <!-- 显示大图区域 -->
                 <div id="showImg">
-                    <img src="{%  static 'details-images/jin1.png'%}" alt="" class="myImgs">
+
+
+
+
+
+                    {% for good in goods %}
+                        <img src="{{ good.headImg }}" alt="" class="myImgs">
+                    {% endfor %}
+{#                    <img src="{%  static 'details-images/jin1.png'%}" alt="" class="myImgs">#}
+
+
+
+
                 </div>
                 <!-- 显示大图区域end -->
                 <ul id="u-mingds">
-                    <li><img src="{%  static 'details-images/jin1.png'%}" alt="" class="myImgs"></li>
+                    <li>
+
+
+
+
+
+
+
+
+                        {% for good in goods %}
+
+                            <img src='{{ good.headIng }}' alt="" class="myImgs">
+                        {% endfor %}
+
+
+
+
+
+
+{#                        <img src="{%  static 'details-images/jin1.png'%}" alt="" class="myImgs">#}
+                    </li>
                     <li><img src="{%  static 'details-images/jin2.jpg'%}" alt="" class="myImgs"></li>
                     <li><img src="{%  static 'details-images/samgsun.jpg'%}" alt="" class="myImgs"></li>
                     <li><img src="{%  static 'details-images/huawei.jpg'%}" alt="" class="myImgs"></li>
@@ -225,7 +258,11 @@
             </div>
             <div class="u-gds-m">
                 <div class="f-buy">
-                    <label>零 售 价：</label><p class="price p-color"> ¥4599.00</p><br>
+                    <label>零 售 价：</label><p class="price p-color">
+                    {% for good in goods %}
+                       {{ good.prince }}
+                    {% endfor %}
+                </p><br>
                     <label>批 发 价：</label><p><span>¥4299.00</span> 一个也批发，单单返钱花</p><br>
                     <label>商品评价：</label><p><i class="star"></i>(60条评论)</p><br>
                     <label>至全国：  </label><p>运费：	10.00元 ，满49元包邮 由 <em>官方店铺</em> 发货</p>

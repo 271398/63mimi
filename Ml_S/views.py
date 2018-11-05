@@ -9,7 +9,8 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from Ml_S.models import User, Wheel1
+from Ml_S.models import User, Wheel1, Goods
+
 
 #主页
 def index(request):
@@ -29,8 +30,11 @@ def index(request):
 
 
 
-def details(request):
-    return render(request, 'details.html')
+def details(request,id):
+    print(id)
+    whells = Wheel1.objects.all()
+    goods=Goods.objects.filter(id=id)
+    return render(request, 'details.html',context={'goods':goods,'whells':whells})
 
 
 

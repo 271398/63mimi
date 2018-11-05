@@ -926,6 +926,7 @@ h1.public-h {
     margin-left: 48px;
 }
 .sales-rgtbar ul.iphoneimgs li{
+    width: 264px;
     float: left;
     margin-left: 10px;
     cursor: pointer;
