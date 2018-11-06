@@ -18,23 +18,26 @@ def index(request):
     whells = Wheel1.objects.all()
     # 获取cookie
     # token = request.COOKIES.get('token')
+    #商品详情
+    goods = Goods.objects.all()[0:3]
+    # for goods in goods:
+    #     print(goods.id)
 
     token = request.session.get('token')
     users = User.objects.filter(token=token)
     if users.count():
         user = users.first()
         print(user.tel)
-        return render(request, 'index.html', context={'tel':user.tel,'whells': whells})
+        return render(request, 'index.html', context={'tel':user.tel,'whells': whells,'goods':goods})
     else:
-        return render(request, 'index.html', context={'whells': whells})
+        return render(request, 'index.html', context={'whells': whells,'goods':goods})
+    #接下来在index中遍历使用，加入辅助标签
 
 
 
-def details(request,id):
-    print(id)
-    whells = Wheel1.objects.all()
+def details(request,id=1):
     goods=Goods.objects.filter(id=id)
-    return render(request, 'details.html',context={'goods':goods,'whells':whells})
+    return render(request, 'details.html',context={'goods':goods})
 
 
 

@@ -1069,30 +1069,47 @@
                 <!-- 手机 -->
                 <div class="sales-rgtbar">
                     <ul class="iphoneimgs goods" id="goods1">
-                        <li>
-                            <a href="{% url 'ml:details' '1'%}" target="_blank">
-                                    商品详情1
-                                <img src="{% static 'images1/iphone7pjin.jpg' %}">
-                                <p class="name">iPhone 7 128G</p>
-                                <p class="price">￥4599</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'ml:details' '2'%}" target="_blank">
-                                    商品详情2
-                                <img src="{% static 'images1/ipad.jpg' %}">
-                                <p class="name">苹果 iPad mini 4 银色</p>
-                                <p class="price">￥3588</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'ml:details' '3'%}" target="_blank">
-                                    商品详情3
-                                <img src="{% static 'images1/iphone7phei.jpg' %}">
-                                <p class="name">苹果Apple iPhone 7Plus 黑色 128G</p>
-                                <p class="price">￥6999</p>
-                            </a>
-                        </li>
+
+
+
+                        {% for goods in goods %}
+                            <li>
+                                <a href="{% url 'ml:details' goods.id %}" target="_blank">
+                                        商品详情{{goods.id}}
+                                    <img src="{{ goods.headIng }}">
+                                    <p class="name">{{ goods.name }}</p>
+                                    <p class="price">￥{{ goods.prince }}</p>
+                                </a>
+                            </li>
+                        {% endfor %}
+
+
+
+
+{#                        <li>#}
+{#                            <a href="{% url 'ml:details' '1'%}" target="_blank">#}
+{#                                    商品详情1#}
+{#                                <img src="{% static 'images1/iphone7pjin.jpg' %}">#}
+{#                                <p class="name">iPhone 7 128G</p>#}
+{#                                <p class="price">￥4599</p>#}
+{#                            </a>#}
+{#                        </li>#}
+{#                        <li>#}
+{#                            <a href="{% url 'ml:details' '2'%}" target="_blank">#}
+{#                                    商品详情2#}
+{#                                <img src="{% static 'images1/ipad.jpg' %}">#}
+{#                                <p class="name">苹果 iPad mini 4 银色</p>#}
+{#                                <p class="price">￥3588</p>#}
+{#                            </a>#}
+{#                        </li>#}
+{#                        <li>#}
+{#                            <a href="{% url 'ml:details' '3'%}" target="_blank">#}
+{#                                    商品详情3#}
+{#                                <img src="{% static 'images1/iphone7phei.jpg' %}">#}
+{#                                <p class="name">苹果Apple iPhone 7Plus 黑色 128G</p>#}
+{#                                <p class="price">￥6999</p>#}
+{#                            </a>#}
+{#                        </li>#}
 {#                    </ul>#}
                     <!-- 实用办公用具 -->
                     <div class="applications">

@@ -193,10 +193,12 @@
                 </div>
             </div>
             <div class="gds-btm">
-                <p class="name">{% for good in goods %}
+                {% for good in goods %}
+                <p class="name">
                         {{ good.name }}
-                    {% endfor %}</p>
-                <span>至大之作，至薄之作，不仅大，更加大放异彩，大有动力，大有能效，改变摄像，有颠覆摄像，全凭指尖~</span>
+                    </p>
+                <span>{{ good.introduction }}&nbsp;&nbsp;&nbsp;至大之作，至薄之作，不仅大，更加大放异彩，大有动力，大有能效，改变摄像，有颠覆摄像，全凭指尖~</span>
+                {% endfor %}
             </div>
         </div>
         <div class="m-gds-m">
