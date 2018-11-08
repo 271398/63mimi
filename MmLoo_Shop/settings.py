@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'MmLoo_Shop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Ml_S',
+        'NAME': 'ml_s',
         'USER': 'root', # 数据库用户名
         'PASSWORD': '123456',   # 数据库密码
         'HOST': '127.0.0.1',    # 主机

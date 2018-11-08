@@ -26,11 +26,12 @@ class Wheel1(models.Model):
         db_table='wheel'
 
 
-class Cart(models.Model):
+class Cart1(models.Model):
     user=models.ForeignKey(User)
     goods=models.ForeignKey(Goods)
     number=models.IntegerField()
     isselect=models.BooleanField(default=True)
     class Meta:
-        db_table='cart'
+        db_table='cart1'
+
 

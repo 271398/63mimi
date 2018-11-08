@@ -48,15 +48,6 @@ def details(request,id=1):
 
 
 
-def tb_cart(request):
-    token = request.session.get('token')
-    users= User.objects.filter(token=token)
-    if users.count():
-        user = users.first()
-        print(user.tel)
-        return render(request, 'tb-cart.html', context={'tel':user.tel})
-    else:
-        return render(request, 'tb-cart.html')
 
 
 
@@ -191,3 +182,18 @@ def addgds(request):
 
     #没有token的情况下加入 购物车 
     # return JsonResponse({'msg':"添加完成"})
+
+
+
+#购物车商品展示
+def tb_cart(request):
+    token = request.session.get('token')
+    users= User.objects.filter(token=token)
+    if users.count():
+        user = users.first()
+        print(user.tel)
+        cart=Cart.objects.filter(user_id=user.id)
+        print(cart.id)
+        return render(request, 'tb-cart.html', context={'tel':user.tel})
+    else:
+        return render(request, 'tb-cart.html')
