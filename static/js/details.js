@@ -1,75 +1,75 @@
 $(function () {
-	//添加商品
-	addGds();
-	function addGds() {
-	 	var addgds = $(".addgds");
-        //传过来的id ?id=1002&name=lisi
-        var param = location.search.substring(1);
-        var id = getParams(param, "id");
-        //获取json数据
-        var arr = [];
-        $.get("http://127.0.0.1:8020/Go Shopping2/MMLOO_SHOP/json/goods.json", function(data) {
-            arr = data;
-            console.log(arr);
-            //选出所点击的商品
-            for(var i=0; i<arr.length; i++) {
-                var obj = arr[i];
-                if(obj.id == id) {
-                    loadUl(obj);
-                }
-            }
-            //添加购物车
-            addgds.click(function() {
-        	 	for(var i=0; i<arr.length; i++) {
-        	 		obj=arr[i]
-        	 	  	if(obj.id == id) {
-            	 	  	var arr2 = $.cookie("cart") ? JSON.parse($.cookie("cart")) : [];
-                        
-                        //是否有相同商品
-                        var isExist = false;  //默认没有商品
-                        for(var j=0; j<arr2.length; j++) {
-                        	
-                            if(arr2[j].id == obj.id) {
-                                arr2[j].num++; //创建一个数量属性
-                                isExist = true;
-                                break;
-                            }
-                        }
-                        if(isExist == false) {
-                            obj.num = 1;
-                            obj.flag = true; //默认选中
-                            //加入属性
-                            arr2.push(obj);
-                        }
-              			//设置cookie 
-                        $.cookie("cart", JSON.stringify(arr2), {expires:30, path:"/"});
-						location.href = "tb-cart.html";
-       				}
-               	}
-            });
-            
-        });
-        //加载页面
-        function loadUl(obj) {
-            $("img.myImgs").attr({"src": obj.headImg});
-            $(".name").html(obj.name);
-            $(".price").html(obj.price);
-            $(".unit").html(obj.unit);
-        }
-        //获取id
-        function getParams(str, name) {
-            var arr = str.split("&");
-            for(var i=0; i<arr.length; i++) {
-                var str1 = arr[i];
-                var arr1 = str1.split("=")
-                if(arr1[0] == name) {
-                    return arr1[1];
-                };
-            }
-            return "";
-        }
-		
-	}
+// 	//添加商品
+// 	addGds();
+// 	function addGds() {
+// 	 	var addgds = $(".addgds");
+//         //传过来的id ?id=1002&name=lisi
+//         var param = location.search.substring(1);
+//         var id = getParams(param, "id");
+//         //获取json数据
+//         var arr = [];
+//         $.get("http://127.0.0.1:8020/Go Shopping2/MMLOO_SHOP/json/goods.json", function(data) {
+//             arr = data;
+//             console.log(arr);
+//             //选出所点击的商品
+//             for(var i=0; i<arr.length; i++) {
+//                 var obj = arr[i];
+//                 if(obj.id == id) {
+//                     loadUl(obj);
+//                 }
+//             }
+//             //添加购物车
+//             addgds.click(function() {
+//         	 	for(var i=0; i<arr.length; i++) {
+//         	 		obj=arr[i]
+//         	 	  	if(obj.id == id) {
+//             	 	  	var arr2 = $.cookie("cart") ? JSON.parse($.cookie("cart")) : [];
+//
+//                         //是否有相同商品
+//                         var isExist = false;  //默认没有商品
+//                         for(var j=0; j<arr2.length; j++) {
+//
+//                             if(arr2[j].id == obj.id) {
+//                                 arr2[j].num++; //创建一个数量属性
+//                                 isExist = true;
+//                                 break;
+//                             }
+//                         }
+//                         if(isExist == false) {
+//                             obj.num = 1;
+//                             obj.flag = true; //默认选中
+//                             //加入属性
+//                             arr2.push(obj);
+//                         }
+//               			//设置cookie
+//                         $.cookie("cart", JSON.stringify(arr2), {expires:30, path:"/"});
+// 						location.href = "tb-cart.html";
+//        				}
+//                	}
+//             });
+//
+//         });
+//         //加载页面
+//         function loadUl(obj) {
+//             $("img.myImgs").attr({"src": obj.headImg});
+//             $(".name").html(obj.name);
+//             $(".price").html(obj.price);
+//             $(".unit").html(obj.unit);
+//         }
+//         //获取id
+//         function getParams(str, name) {
+//             var arr = str.split("&");
+//             for(var i=0; i<arr.length; i++) {
+//                 var str1 = arr[i];
+//                 var arr1 = str1.split("=")
+//                 if(arr1[0] == name) {
+//                     return arr1[1];
+//                 };
+//             }
+//             return "";
+//         }
+//
+// 	}
 	
 	
 	//放大镜

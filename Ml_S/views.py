@@ -5,11 +5,11 @@ import hashlib
 import random
 import time
 
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from Ml_S.models import User, Wheel1, Goods
+from Ml_S.models import User, Wheel1, Goods, Cart
 
 
 #主页
@@ -36,8 +36,15 @@ def index(request):
 
 
 def details(request,id=1):
+    token=request.session.get('token')
     goods=Goods.objects.filter(id=id)
-    return render(request, 'details.html',context={'goods':goods})
+    users = User.objects.filter(token=token)
+    if users.count():
+        user = users.first()
+        print(user.tel)
+        return render(request, 'details.html', context={'tel': user.tel,'goods':goods})
+    else:
+        return render(request, 'details.html',context={'goods':goods})
 
 
 
@@ -145,3 +152,42 @@ def generate_password(password):
     sha = hashlib.sha512()
     sha.update(password.encode('utf-8'))
     return sha.hexdigest()
+
+#添加购物车的ajax请求
+def addgds(request):
+    goodsid=request.GET.get('goodsid')
+    print(goodsid)
+    token=request.session.get('token')
+    responseData={
+        'msg':'添加购物车',
+        'status':1#为1表示登录，为-1表示未登录
+    }
+
+    if token:
+        user= User.objects.get(token=token)
+        goods=Goods.objects.get(id=goodsid)
+
+
+
+        carts=Cart.objects.filter(goods_id=goods.id).filter(user_id=user.id)
+        if carts.exists():
+            cart=carts.first()
+            cart.number=cart.number + 1
+            cart.save()
+        else:
+            cart=Cart()
+            cart.goods=goods
+            cart.user=user
+            cart.number=1
+            cart.save()
+
+
+        return JsonResponse({'msg':"添加完成"})
+    else:  #ajax操作不能进行重定向
+        responseData['msg']='未登录'
+        responseData['status']=-1
+        return JsonResponse(responseData)
+
+
+    #没有token的情况下加入 购物车 
+    # return JsonResponse({'msg':"添加完成"})
