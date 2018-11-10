@@ -27,7 +27,7 @@ def index(request):
     users = User.objects.filter(token=token)
     if users.count():
         user = users.first()
-        print(user.tel)
+        # print(user.tel)
         return render(request, 'index.html', context={'tel':user.tel,'whells': whells,'goods':goods})
     else:
         return render(request, 'index.html', context={'whells': whells,'goods':goods})
@@ -41,7 +41,7 @@ def details(request,id=1):
     users = User.objects.filter(token=token)
     if users.count():
         user = users.first()
-        print(user.tel)
+        # print(user.tel)
         return render(request, 'details.html', context={'tel': user.tel,'goods':goods})
     else:
         return render(request, 'details.html',context={'goods':goods})
@@ -61,8 +61,7 @@ def register(request):
         tel=request.POST.get('tel')
         password=request.POST.get('pword')
         #
-        print(tel,password)
-        print("wocoa")
+        # print(tel,password)
 
 
 
@@ -71,7 +70,6 @@ def register(request):
         user.password = generate_password(password)
         user.token = generate_token()
         user.save()
-        print("好了")
 
         response=redirect('ml:index')
 
@@ -94,7 +92,7 @@ def login(request):
     elif request.method=='POST':
         tel=request.POST.get("tel")
         password=request.POST.get('pw')
-        print(tel,password)
+        # print(tel,password)
         password = generate_password(password)
 
         # 验证
@@ -112,7 +110,7 @@ def login(request):
             #
             # return response
             request.session['token'] = user.token
-            request.session.set_expiry(60)
+            request.session.set_expiry(600)
             return redirect('ml:index')
 
         else:
@@ -147,7 +145,7 @@ def generate_password(password):
 #添加购物车的ajax请求
 def addgds(request):
     goodsid=request.GET.get('goodsid')
-    print(goodsid)
+    # print(goodsid)
     token=request.session.get('token')
     responseData={
         'msg':'添加购物车',
@@ -160,7 +158,7 @@ def addgds(request):
 
 
 
-        carts=Cart.objects.filter(goods_id=goods.id).filter(user_id=user.id)
+        carts=Cart.objects.filter(goods_id=goods).filter(user_id=user)
         if carts.exists():
             cart=carts.first()
             cart.number=cart.number + 1
@@ -191,9 +189,105 @@ def tb_cart(request):
     users= User.objects.filter(token=token)
     if users.count():
         user = users.first()
-        print(user.tel)
-        cart=Cart.objects.filter(user_id=user.id)
-        print(cart.id)
-        return render(request, 'tb-cart.html', context={'tel':user.tel})
+        # print(user.tel)
+        # print(user.id)
+        carts=Cart.objects.filter(user_id=user.id)
+        a=len(carts)
+        gongj=0
+        for cart in carts:
+            # print(cart.goods_id)
+            goods=Goods.objects.get(id=cart.goods_id)
+            if cart.isselect==1:
+
+                gongj = gongj + goods.prince * cart.number
+
+        data = {
+            'goods': Goods.objects.all(),
+            'tel': user.tel,
+            'carts': carts,
+            'a': a,
+            'gj':gongj
+        }
+        return render(request, 'tb-cart.html', context=data)
     else:
         return render(request, 'tb-cart.html')
+
+
+#商品数量增加
+def ag(request):
+    goodsid=request.GET.get('goodsid')
+    token=request.session.get('token')
+    user= User.objects.get(token=token)
+    goods=Goods.objects.get(id=goodsid)
+    ids = user.id
+    # print(user.id,goodsid)
+
+    carts = Cart.objects.filter(goods_id=goods).filter(user_id=user)
+    cart = carts.first()
+    cart.number = cart.number + 1
+    cart.save()
+
+    responseData = {
+    }
+    responseData['gj'] = gongji(ids)
+    responseData['number']=cart.number
+
+    return JsonResponse(responseData)
+
+
+#商品数量减少
+def jg(request):
+    goodsid = request.GET.get('goodsid')
+    # print(goodsid)
+    token = request.session.get('token')
+    user = User.objects.get(token=token)
+    goods = Goods.objects.get(id=goodsid)
+    ids=user.id
+
+    carts = Cart.objects.filter(goods_id=goods).filter(user_id=user)
+    cart = carts.first()
+    cart.number = cart.number - 1
+    cart.save()
+
+    responseData = {
+    }
+    responseData['gj']=gongji(ids)
+    responseData['number'] = cart.number
+    return JsonResponse(responseData)
+
+
+#单件单件商品选中
+def xuan(request):
+    goodsid=request.GET.get('goodsid')
+    token = request.session.get('token')
+    user = User.objects.get(token=token)
+    ids = user.id
+    carts = Cart.objects.filter(goods_id=goodsid).filter(user_id=user.id)
+    cart = carts.first()
+    print(cart.isselect)
+    if cart.isselect:
+        cart.isselect=False
+    else:
+        cart.isselect=True
+    cart.save()
+
+    # print(goodsid)
+    print(cart.id)
+    responseData={}
+    responseData['gj'] = gongji(ids)
+    print(gongji(ids))
+
+    return JsonResponse(responseData)
+
+
+
+#总价计算
+def gongji(id):#此处Id为购物车的用户id
+    carts = Cart.objects.filter(user_id=id)
+    gongj = 0
+    for cart in carts:
+        # print(cart.goods_id)
+        goods = Goods.objects.get(id=cart.goods_id)
+        if cart.isselect == 1:
+            gongj = gongj + goods.prince * cart.number
+    return gongj

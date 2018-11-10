@@ -74,43 +74,43 @@ $(function() {
     }
    
    //选中某个商品
-	var arr = JSON.parse($.cookie("cart")); 
-	var index = 0;
-	//商品数量
-	var num = 0;
-   	$(".cnt-m").on("click", ".select", function() {
-   		//console.log($(this))
-		var index = $(this).index(".cnt-m .list1 li .select");
-		//console.log(index,arr[index].flag,arr)
-		if(!arr[index].flag) {
-			$(this).css({"background": "#f90"});
-			arr[index].flag = true;
-			$.cookie("cart", JSON.stringify(arr), {expires:30, path:"/"});
-			 console.log($.cookie("cart"));
-		} 
-		else {
-			console.log($.cookie("cart"));
-			$(this).css({"background": "#fff"});
-			console.log(index)
-			arr[index].flag = false;
-			$.cookie("cart", JSON.stringify(arr), {expires:30, path:"/"});
-			console.log($.cookie("cart"));
-		}
-
-		//选中某个商品改变商品的数量
-		if(arr[index].flag == true) {
-			$(".gds-pay-rgt").find("#choNum").html(++num);
-		} 
-		if(arr[index].flag == false) {
-			$(".gds-pay-rgt").find("#choNum").html(--num);
-		}
-		
-		
-		//调用
-        isAllSelect();
-        accSelect();
-        refresh();
-	});
+	// var arr = JSON.parse($.cookie("cart"));
+	// var index = 0;
+	// //商品数量
+	// var num = 0;
+   // 	$(".cnt-m").on("click", ".select", function() {
+   // 		//console.log($(this))
+	// 	var index = $(this).index(".cnt-m .list1 li .select");
+	// 	//console.log(index,arr[index].flag,arr)
+	// 	if(!arr[index].flag) {
+	// 		$(this).css({"background": "#f90"});
+	// 		arr[index].flag = true;
+	// 		$.cookie("cart", JSON.stringify(arr), {expires:30, path:"/"});
+	// 		 console.log($.cookie("cart"));
+	// 	}
+	// 	else {
+	// 		console.log($.cookie("cart"));
+	// 		$(this).css({"background": "#fff"});
+	// 		console.log(index)
+	// 		arr[index].flag = false;
+	// 		$.cookie("cart", JSON.stringify(arr), {expires:30, path:"/"});
+	// 		console.log($.cookie("cart"));
+	// 	}
+   //
+	// 	//选中某个商品改变商品的数量
+	// 	if(arr[index].flag == true) {
+	// 		$(".gds-pay-rgt").find("#choNum").html(++num);
+	// 	}
+	// 	if(arr[index].flag == false) {
+	// 		$(".gds-pay-rgt").find("#choNum").html(--num);
+	// 	}
+	//
+	//
+	// 	//调用
+   //      isAllSelect();
+   //      accSelect();
+   //      refresh();
+	// });
 	
 	//刷新后显示的商品数量
 	for(var j=0; j<arr.length; j++) {

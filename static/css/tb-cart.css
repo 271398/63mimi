@@ -640,9 +640,30 @@ label {
 	background: url(../imgs/plice.png) no-repeat;
 }
 
+.xt{
+    width: 100px;
+}
+.gb12{
+    line-height:200px;
+}
+
+.glyphicon glyphicon-ok{
+    background: yellow;
+    color: red;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    font-size: 1rem;
+}
 
 
-
+.no{
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 1px solid black;
+}
 
 
 

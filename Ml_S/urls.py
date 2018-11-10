@@ -10,5 +10,11 @@ urlpatterns=[
     url(r'^logout/$', views.logout),
     url(r'^details/(\d+)/$', views.details, name='details'),
 # 添加购物车的请求
-    url(r'^addgds/$',views.addgds,name='addgds')
+    url(r'^addgds/$',views.addgds,name='addgds'),
+# 商品数量增加的请求
+    url(r"^ag/$",views.ag,name='jia'),
+#商品数量减少
+    url(r"^jg/$",views.jg,name='jian'),
+#商品选中
+    url(r'^xuan/$',views.xuan,name='xuan'),
 ]
