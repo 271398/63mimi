@@ -17,4 +17,10 @@ urlpatterns=[
     url(r"^jg/$",views.jg,name='jian'),
 #商品选中
     url(r'^xuan/$',views.xuan,name='xuan'),
+#全选
+    url(r'^all/$',views.all,name='all'),
+#全不选
+    url(r'^allno/$',views.allno,name='allno'),
+#删除
+    url(r'^delect/$',views.delect,name='del'),
 ]

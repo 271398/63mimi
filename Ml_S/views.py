@@ -197,9 +197,11 @@ def tb_cart(request):
         for cart in carts:
             # print(cart.goods_id)
             goods=Goods.objects.get(id=cart.goods_id)
-            if cart.isselect==1:
+            if cart.isselect==1 and cart.number>0:
 
                 gongj = gongj + goods.prince * cart.number
+            else:
+                a=a-1
 
         data = {
             'goods': Goods.objects.all(),
@@ -258,11 +260,11 @@ def jg(request):
 
 #单件单件商品选中
 def xuan(request):
-    goodsid=request.GET.get('goodsid')
+    cartid=request.GET.get('cartid')
     token = request.session.get('token')
     user = User.objects.get(token=token)
     ids = user.id
-    carts = Cart.objects.filter(goods_id=goodsid).filter(user_id=user.id)
+    carts = Cart.objects.filter(id=cartid)
     cart = carts.first()
     print(cart.isselect)
     if cart.isselect:
@@ -273,12 +275,60 @@ def xuan(request):
 
     # print(goodsid)
     print(cart.id)
-    responseData={}
+    responseData={
+        'isselect':cart.isselect
+    }
     responseData['gj'] = gongji(ids)
     print(gongji(ids))
 
     return JsonResponse(responseData)
 
+
+
+
+def all(request):
+    token = request.session.get('token')
+    user = User.objects.get(token=token)
+    ids = user.id
+    carts = Cart.objects.filter(user_id=user.id)
+    for cart in carts:
+        cart.isselect = True
+        cart.save()
+    a=len(carts)
+    responseData = {
+        'a':a
+    }
+    responseData['gj'] = gongji(ids)
+    return JsonResponse(responseData)
+
+
+def allno(request):
+    token = request.session.get('token')
+    user = User.objects.get(token=token)
+    ids = user.id
+    carts = Cart.objects.filter(user_id=user.id)
+    for cart in carts:
+        cart.isselect = False
+        cart.save()
+    a=len(carts)
+    responseData = {
+        'a':a
+    }
+    responseData['gj'] = gongji(ids)
+    return JsonResponse(responseData)
+
+
+def delect(request):
+    cartid = request.GET.get('cartid')
+    print(cartid)
+    carts = Cart.objects.get(id=cartid).delete()
+    token = request.session.get('token')
+    user = User.objects.get(token=token)
+    ids = user.id
+    responseData = {
+    }
+    responseData['gj'] = gongji(ids)
+    return JsonResponse(responseData)
 
 
 #总价计算
@@ -291,3 +341,4 @@ def gongji(id):#此处Id为购物车的用户id
         if cart.isselect == 1:
             gongj = gongj + goods.prince * cart.number
     return gongj
+

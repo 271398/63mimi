@@ -51,42 +51,43 @@
         </div>
     </div>
 
-    <div>
+    <div id="i">
         {% for cart in carts %}
 
-            <div class="gd12" style="border: 1px solid black">
+            <div class="gd12" style="border: 1px solid black" cartid="{{ cart.id }}">
                 {% if cart.number > 0 %}
 
 
-
-                    {% if cart.isselect %}
-                        <span class="glyphicon glyphicon-ok" id="i4" goodsid="{{ cart.goods_id}}"></span>
-                    {% else %}
-                        <span class="no" id="i4" goodsid="{{ cart.goods_id}}"></span>
-                    {% endif %}
-
-
-
-                    数量:<input type="button" value="-" goodsid="{{ cart.goods_id}}" class="jian">
-                    <span class="num">{{ cart.number }}</span>
-
-
-
-                    <input type="button" value="+" goodsid="{{ cart.goods_id}}" class="jia">
-                    {% for gd in goods %}
-                        {% if gd.id == cart.goods_id %}
-                            <span> <img src="{{ gd.headIng }}" class="xt"> </span>
-                            <span>商品名字：{{ gd.name }}</span>
+                    <div class="c1" cartid="{{ cart.id }}">
+                        {% if cart.isselect %}
+                            <span class="glyphicon glyphicon-ok" id="i4"></span>
+                        {% else %}
+                            <span class="no" id="i4"></span>
                         {% endif %}
-                    {% endfor %}
+                    </div>
+
+                   <div class="xinxi">
+                        数量:<input type="button" value="-" goodsid="{{ cart.goods_id}}" class="jian">
+                        {{ cart.number }}
+
+
+
+                        <input type="button" value="+" goodsid="{{ cart.goods_id}}" class="jia">
+                        {% for gd in goods %}
+                            {% if gd.id == cart.goods_id %}
+                                 <img src="{{ gd.headIng }}" class="xt">
+                                商品名字：{{ gd.name }}
+                            {% endif %}
+                        {% endfor %}
+                        <input type="button" value="删除" cartid="{{ cart.id}}" class="shan">
+                    </div>
                 {% endif %}
             </div>
         {% endfor %}
     </div>
 <div>
     <span>全选</span>
-    <span class="glyphicon glyphicon-ok" id="i3"></span>
-    <span class="no" id="i2"></span>共计：
+    <span class="no" id="i3" isselect="false"></span>共计：
     <span id="i1">{{ gj }}</span>元
 </div>
 
