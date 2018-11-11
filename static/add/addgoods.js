@@ -89,10 +89,11 @@ $(function () {
 
     $('.shan').click(function () {
         var cartid=$(this).attr('cartid')
+        var that=$(this)
          $.get('/delect/',{'cartid':cartid},function (response) {
              $('#i1').show().html(response.gj)
              console.log(response.gj)
-             $(this).remove()
+             that.parent().parent().remove()
              console.log('1')
          })
 
