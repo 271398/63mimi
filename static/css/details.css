@@ -772,5 +772,13 @@
     margin-left: 4px;
     color: #9999b2;
 }
+.number
+    {
+    display: inline-block;
+    width: 33px;
+    height: 18px;
+    border: 1px solid #cccccc;
+    padding: 10px 0 0 5px;
+}
 
 

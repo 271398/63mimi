@@ -1,8 +1,9 @@
 $(function () {
     $('.addgds').click(function () {
         var goodsid=$(this).attr('goodsid')
-        console.log(goodsid)
-        $.get('/addgds/', {'goodsid':goodsid},function (response) {
+        var a=$(".number").html()
+        console.log(a)
+        $.get('/addgds/', {'goodsid':goodsid,'a':a},function (response) {
             console.log(response)
             if (response.status == -1){
                 window.open('/login/', target="_self")
@@ -14,13 +15,12 @@ $(function () {
     $('.jian').click(function () {
         var goodsid=$(this).attr('goodsid')
         var that=$(this)
-        console.log(goodsid)
         $.get('/jg/',{'goodsid':goodsid},function (response) {
              console.log(response)
             if (response.status == -1){
                 window.open('/login/', target="_self")
             }else{
-                that.next().show().html(response.number)
+                $('#i9').show().html(response.number)
                 $('#i1').show().html(response.gj)
             }
         })
@@ -32,12 +32,12 @@ $(function () {
         var that = $(this)
         console.log(goodsid)
         $.get('/ag/',{'goodsid':goodsid},function (response) {
-             console.log(response)
             if (response.status == -1){
                 window.open('/login/', target="_self")
             }
             else{
-                that.prev().show().html(response.number)
+                console.log(response.number)
+                $('#i9').show().html(response.number)
                 $('#i1').show().html(response.gj)
             }
         })
@@ -97,5 +97,32 @@ $(function () {
              console.log('1')
          })
 
-    })
+    });
+
+
+
+    $('.add').click(function () {
+        var a=$('.number').html()
+        console.log(a)
+        $.get('/dadd/',{'a':a},function (response) {
+            console.log(response.a)
+            $('.number').show().html(response.a)
+            // $('#i10').children().remove()
+            // $('#i10').append('<span class="num" >response.a</span>')
+        })
+
+    });
+
+
+    $('.mtp').click(function () {
+        var a=$('.number').html()
+        console.log(a)
+        $.get('/djian/',{'a':a},function (response) {
+            console.log(response.a)
+                $('.number').show().html()
+            $('.number').show().html(response.a)
+
+        })
+
+    });
 })

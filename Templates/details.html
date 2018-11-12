@@ -17,8 +17,6 @@
     <script src="{% static 'add/addgoods.js' %}"></script>
 
 
-
-
 </head>
 <body>
 <div class="g-t-wrap">
@@ -285,11 +283,14 @@
                 </div>
                 <div>
                     <div class="f-add-1">
+                    {% for good in goods %}
+
                         <div>
-                            <label>购买数量：</label><span class="num">1</span>
-                            <input class="add" type="button" value="+">
-                            <input class="mtp" type="button" value="-"><br>
+                            <label>购买数量：</label><span id="i10"><span class="number" >1</span></span>
+                            <input class="add" type="button" value="+" goodsid="{{ good.id }}">
+                            <input class="mtp" type="button" value="-" goodsid="{{ good.id }}">
                         </div>
+                    {% endfor %}
                         <div class="f-add-2">
                             <input class="buygds" type="button" value="立即购买">
 

@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="41358eb2-3b7e-4766-a072-acdf6e81cfc3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ml_S/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ml_S/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ml_S/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ml_S/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/tb-cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/tb-cart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/add/addgoods.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/add/addgoods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/details.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/details.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +53,7 @@
     <session id="-445326158">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="24" />
+          <entry key="project.closed" value="25" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.112" value="1" />
@@ -70,7 +75,8 @@
           <entry key="project.open.time.60" value="2" />
           <entry key="project.open.time.61" value="2" />
           <entry key="project.open.time.62" value="1" />
-          <entry key="project.open.time.66" value="1" />
+          <entry key="project.open.time.66" value="2" />
+          <entry key="project.open.time.67" value="1" />
           <entry key="project.open.time.68" value="1" />
           <entry key="project.open.time.70" value="1" />
           <entry key="project.open.time.71" value="1" />
@@ -83,7 +89,7 @@
           <entry key="project.open.time.88" value="1" />
           <entry key="project.open.time.90" value="1" />
           <entry key="project.open.time.93" value="1" />
-          <entry key="project.opened" value="37" />
+          <entry key="project.opened" value="39" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -94,15 +100,15 @@
           <entry key="Ml_S_wheel1" value="2" />
           <entry key="auth_user" value="3" />
           <entry key="cart" value="10" />
-          <entry key="css" value="18" />
+          <entry key="css" value="19" />
           <entry key="django_migrations" value="2" />
           <entry key="django_session" value="1" />
           <entry key="goods" value="11" />
-          <entry key="html" value="42" />
-          <entry key="js" value="13" />
+          <entry key="html" value="44" />
+          <entry key="js" value="16" />
           <entry key="json" value="3" />
           <entry key="map" value="1" />
-          <entry key="py" value="69" />
+          <entry key="py" value="70" />
           <entry key="sql" value="5" />
           <entry key="user" value="2" />
           <entry key="wheel" value="4" />
@@ -110,33 +116,33 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="18" />
+          <entry key="CSS" value="19" />
           <entry key="Database Element" value="49" />
-          <entry key="HTML" value="42" />
+          <entry key="HTML" value="44" />
           <entry key="JSON" value="3" />
-          <entry key="JavaScript" value="13" />
+          <entry key="JavaScript" value="16" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="69" />
+          <entry key="Python" value="70" />
           <entry key="Scratch" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="cell" value="603" />
-          <entry key="css" value="275" />
-          <entry key="html" value="2210" />
-          <entry key="js" value="1389" />
-          <entry key="py" value="4402" />
+          <entry key="css" value="284" />
+          <entry key="html" value="2291" />
+          <entry key="js" value="1745" />
+          <entry key="py" value="4645" />
           <entry key="txt" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="275" />
-          <entry key="HTML" value="2210" />
-          <entry key="JavaScript" value="1389" />
+          <entry key="CSS" value="284" />
+          <entry key="HTML" value="2291" />
+          <entry key="JavaScript" value="1745" />
           <entry key="PLAIN_TEXT" value="13" />
-          <entry key="Python" value="4402" />
+          <entry key="Python" value="4645" />
           <entry key="Scratch" value="603" />
         </counts>
       </usages-collector>
@@ -144,59 +150,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ml_S/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4800">
-              <caret line="330" column="37" selection-start-line="330" selection-start-column="37" selection-end-line="330" selection-end-column="37" />
-              <folding>
-                <marker date="1541883973397" expanded="true" signature="5168:5173" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ml_S/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="12" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ml_S/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Templates/tb-cart.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
-              <caret line="55" selection-start-line="55" selection-end-line="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/static/add/addgoods.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="99" column="6" lean-forward="true" selection-start-line="99" selection-start-column="6" selection-end-line="99" selection-end-column="6" />
+            <state relative-caret-position="315">
+              <caret line="78" column="50" lean-forward="true" selection-start-line="78" selection-start-column="50" selection-end-line="78" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/js/tb-cart.js">
+        <entry file="file://$PROJECT_DIR$/static/add/addgoods.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="160" column="18" selection-start-line="160" selection-start-column="12" selection-end-line="160" selection-end-column="18" />
+            <state relative-caret-position="240">
+              <caret line="79" column="72" lean-forward="true" selection-start-line="79" selection-start-column="72" selection-end-line="79" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -227,6 +194,8 @@
       <find>添加</find>
       <find>cnt-m</find>
       <find>20</find>
+      <find>购买数量</find>
+      <find>num</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -242,7 +211,6 @@
         <option value="$PROJECT_DIR$/Templates/base.html" />
         <option value="$PROJECT_DIR$/Templates/index.html" />
         <option value="$PROJECT_DIR$/static/add/package.json" />
-        <option value="$PROJECT_DIR$/Templates/details.html" />
         <option value="$PROJECT_DIR$/static/js/details.js" />
         <option value="$PROJECT_DIR$/MmLoo_Shop/settings.py" />
         <option value="$PROJECT_DIR$/Ml_S/models.py" />
@@ -251,10 +219,12 @@
         <option value="$PROJECT_DIR$/static/add/jiannum.js" />
         <option value="$PROJECT_DIR$/static/add/addnumber.js" />
         <option value="$PROJECT_DIR$/static/css/tb-cart.css" />
-        <option value="$PROJECT_DIR$/Ml_S/views.py" />
         <option value="$PROJECT_DIR$/Ml_S/urls.py" />
-        <option value="$PROJECT_DIR$/Templates/tb-cart.html" />
+        <option value="$PROJECT_DIR$/Ml_S/views.py" />
+        <option value="$PROJECT_DIR$/Templates/details.html" />
         <option value="$PROJECT_DIR$/static/add/addgoods.js" />
+        <option value="$PROJECT_DIR$/static/css/details.css" />
+        <option value="$PROJECT_DIR$/Templates/tb-cart.html" />
       </list>
     </option>
   </component>
@@ -296,18 +266,13 @@
               <item name="Mmloo-shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="Mmloo-shop" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="add" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Mmloo-shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="Mmloo-shop" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mmloo-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mmloo-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="Templates" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -395,11 +360,11 @@
     <frame x="67" y="25" width="1849" height="868" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23741007" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2423907" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4997233" weight="0.32974428" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -408,8 +373,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.52019924" side_tool="true" visible="true" weight="0.36339167" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.47980076" visible="true" weight="0.36339167" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5218594" side_tool="true" visible="true" weight="0.36339167" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.47814056" visible="true" weight="0.36339167" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32974428" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.32974428" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -552,13 +517,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/details.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2565">
-          <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/add/jiannum.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -570,13 +528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Templates/details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="61" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -597,34 +548,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ml_S/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4800">
-          <caret line="330" column="37" selection-start-line="330" selection-start-column="37" selection-end-line="330" selection-end-column="37" />
-          <folding>
-            <marker date="1541883973397" expanded="true" signature="5168:5173" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Ml_S/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="32" column="12" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ml_S/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Templates/tb-cart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
         </state>
       </provider>
     </entry>
@@ -635,10 +562,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/details.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2565">
+          <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ml_S/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Templates/details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-458">
+          <caret line="301" selection-start-line="301" selection-end-line="301" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ml_S/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1965">
+          <caret line="157" column="13" lean-forward="true" selection-start-line="157" selection-start-column="13" selection-end-line="157" selection-end-column="13" />
+          <folding>
+            <marker date="1541994489472" expanded="true" signature="5223:5228" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/details.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="766" column="26" lean-forward="true" selection-start-line="766" selection-start-column="26" selection-end-line="766" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/add/addgoods.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="99" column="6" lean-forward="true" selection-start-line="99" selection-start-column="6" selection-end-line="99" selection-end-column="6" />
+        <state relative-caret-position="240">
+          <caret line="79" column="72" lean-forward="true" selection-start-line="79" selection-start-column="72" selection-end-line="79" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Templates/tb-cart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="78" column="50" lean-forward="true" selection-start-line="78" selection-start-column="50" selection-end-line="78" selection-end-column="50" />
         </state>
       </provider>
     </entry>

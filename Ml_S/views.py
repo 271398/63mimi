@@ -34,7 +34,7 @@ def index(request):
     #接下来在index中遍历使用，加入辅助标签
 
 
-
+#详情页
 def details(request,id=1):
     token=request.session.get('token')
     goods=Goods.objects.filter(id=id)
@@ -145,7 +145,10 @@ def generate_password(password):
 #添加购物车的ajax请求
 def addgds(request):
     goodsid=request.GET.get('goodsid')
-    # print(goodsid)
+    a=request.GET.get('a')
+    a=int(a)
+    print(goodsid)
+    print(a)
     token=request.session.get('token')
     responseData={
         'msg':'添加购物车',
@@ -161,13 +164,13 @@ def addgds(request):
         carts=Cart.objects.filter(goods_id=goods).filter(user_id=user)
         if carts.exists():
             cart=carts.first()
-            cart.number=cart.number + 1
+            cart.number=cart.number + a
             cart.save()
         else:
             cart=Cart()
             cart.goods=goods
             cart.user=user
-            cart.number=1
+            cart.number=a
             cart.save()
 
 
@@ -285,7 +288,7 @@ def xuan(request):
 
 
 
-
+#全选
 def all(request):
     token = request.session.get('token')
     user = User.objects.get(token=token)
@@ -302,6 +305,8 @@ def all(request):
     return JsonResponse(responseData)
 
 
+
+#全不选
 def allno(request):
     token = request.session.get('token')
     user = User.objects.get(token=token)
@@ -317,7 +322,7 @@ def allno(request):
     responseData['gj'] = gongji(ids)
     return JsonResponse(responseData)
 
-
+#删除商品
 def delect(request):
     cartid = request.GET.get('cartid')
     print(cartid)
@@ -342,3 +347,23 @@ def gongji(id):#此处Id为购物车的用户id
             gongj = gongj + goods.prince * cart.number
     return gongj
 
+
+def dadd(request):
+    a = request.GET.get('a')
+    a = int(a)
+    a=a+1
+    responseData = {
+        'a':a
+    }
+    print(a)
+    return JsonResponse(responseData)
+
+
+def djian(request):
+    number = request.GET.get('a')
+    a = int(number)-1
+    responseData = {
+    }
+    responseData['a'] = a
+    print(a)
+    return JsonResponse(responseData)
